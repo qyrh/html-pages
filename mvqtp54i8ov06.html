@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恋爱与高情商聊天全攻略</title>
+    <style>
+        :root {
+            --primary: #07c160;
+            --bg: #f5f5f5;
+            --text-main: #333;
+            --text-sub: #888;
+            --wechat-bg: #ededed;
+            --wechat-green: #95ec69;
+            --wechat-white: #fff;
+            --note-red: #e74c3c;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        h1 { font-size: 24px; text-align: center; color: #222; border-bottom: 2px solid var(--primary); padding-bottom: 15px; margin-bottom: 30px; }
+        h2 { font-size: 20px; color: var(--primary); margin-top: 35px; border-left: 4px solid var(--primary); padding-left: 10px; }
+        h3 { font-size: 16px; color: #444; margin-top: 20px; }
+        p { margin: 10px 0; color: #444; font-size: 15px; }
+        ul, ol { padding-left: 20px; font-size: 15px; }
+        li { margin-bottom: 8px; }
+
+        /* 案例链接按钮样式 */
+        .case-link {
+            display: inline-block;
+            background-color: #e8f8f0;
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0;
+            cursor: pointer;
+            border: 1px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+        .case-link:hover { background-color: var(--primary); color: #fff; }
+
+        /* 弹窗 (Modal) 样式 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 420px;
+            height: 85vh;
+            background-color: var(--wechat-bg);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: popIn 0.3s ease-out;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-header {
+            background-color: #f7f7f7;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            left: 15px;
+            top: 15px;
+            font-size: 20px;
+            color: #333;
+            cursor: pointer;
+            font-weight: normal;
+        }
+
+        .chat-container {
+            flex: 1;
+            padding: 20px 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* 聊天消息基础样式 */
+        .chat-row { display: flex; margin-bottom: 5px; position: relative; }
+        .chat-row.right { justify-content: flex-end; }
+        
+        .avatar {
+            width: 40px; height: 40px;
+            border-radius: 4px;
+            background-color: #ccc;
+            flex-shrink: 0;
+        }
+        
+        .bubble {
+            max-width: 70%;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 15px;
+            position: relative;
+            word-wrap: break-word;
+            line-height: 1.5;
+        }
+
+        /* 左侧（女生） */
+        .chat-row.left .avatar { margin-right: 10px; background-color: #f0d9d9; }
+        .chat-row.left .bubble { background-color: var(--wechat-white); color: #333; }
+        .chat-row.left .bubble::before {
+            content: ''; position: absolute; left: -6px; top: 14px;
+            border-top: 6px solid transparent; border-bottom: 6px solid transparent;
+            border-right: 6px solid var(--wechat-white);
+        }
+
+        /* 右侧（男生） */
+        .chat-row.right .avatar { margin-left: 10px; background-color: #d9e8f0; }
+        .chat-row.right .bubble { background-color: var(--wechat-green); color: #000; }
+        .chat-row.right .bubble::after {
+            content: ''; position: absolute; right: -6px; top: 14px;
+            border-top: 6px solid transparent; border-bottom: 6px solid transparent;
+            border-left: 6px solid var(--wechat-green);
+        }
+
+        /* 红色注释文字 */
+        .note-red {
+            color: var(--note-red);
+            font-size: 13px;
+            font-weight: bold;
+            margin: 2px 0 10px 0;
+            text-shadow: 0 0 2px #fff;
+        }
+        .chat-row.left + .note-red { padding-left: 50px; }
+        .chat-row.right + .note-red { padding-right: 50px; text-align: right; }
+
+        /* 错误/正确 特殊气泡 */
+        .bubble.error { border: 1px solid #e74c3c; background-color: #fdf0ef; }
+        .chat-row.right .bubble.error::after { border-left-color: #fdf0ef; }
+        .bubble.correct { border: 1px solid var(--primary); }
+        
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>恋爱脱单与高情商聊天全攻略</h1>
+
+    <!-- 第一部分：底层逻辑 -->
+    <h2>第一部分：核心理论——婚恋价值</h2>
+    <p>在恋爱中，价值分为<b>硬价值</b>和<b>软价值</b>。</p>
+    
+    <h3>1. 硬价值 (直观可见)</h3>
+    <ul>
+        <li><b>生存价值</b>：支撑你在社会生活的资源。如：财富、权利、社会地位、车房、影响力。</li>
+        <li><b>繁衍价值</b>：生理特征。男性表现为：身高、体型、腹肌、健康；女性表现为：外貌、身材等。</li>
+    </ul>
+
+    <h3>2. 软价值 (相处体会)</h3>
+    <ul>
+        <li><b>内在价值</b>：认知思维层次高、情绪稳定、高情商、多才多艺、顶级社交直觉。</li>
+        <li><b>性格特质</b>：幽默风趣、懂女人、细心体贴、自信勇敢。</li>
+        <li><b>核心技能</b>：超高的聊天能力、浪漫的约会能力。</li>
+    </ul>
+    <p><b>核心结论：</b>现代女性大多能经济独立，因此男生的“软价值”往往比“生存价值”更能吸引女生。硬价值短期内难改变，但软价值完全可以通过后天学习快速提升。</p>
+
+    <!-- 第二部分：五步法 -->
+    <h2>第二部分：聊天五步法 (核心框架)</h2>
+    <p>跟女生发展的过程一般分为五个阶段：陌生、朋友、初始、暧昧、亲密关系。聊天不是照剧本演，而是主导引导女生。</p>
+
+    <h3>第一步：开场破冰 (测试与引导)</h3>
+    <p><b>目的：</b>降低防备心，测试女生是否有聊天意愿，避免查户口式聊天。</p>
+    <p><b>方法：</b>简单但与众不同。用有趣的表情包开场，不管女生回什么，都要把她的回复跟其他事物联想，变成有趣的话题延伸下去。</p>
+    <a class="case-link" onclick="openModal('chat1')">▶ 查看：破冰与交换信息实战案例</a>
+
+    <h3>第二步：植入人设 (展示软价值)</h3>
+    <p><b>目的：</b>通过聊天让女生觉得你与众不同，有自己的人格魅力。</p>
+    <p><b>原则：</b>不要说教，要通过“表达观点”或“分享日常”侧面展示，让女生自己给你贴标签。</p>
+    <p><b>话术示例：</b>“我真的很讨厌那些乱丢垃圾污染环境的人。”（展示爱卫生）；“现在的工作是在积累人脉，明年准备自己出来创业。”（展示上进心）；“我不太喜欢不明不白就开始的爱情，喜欢循序渐进。”（展示专一）。</p>
+    <a class="case-link" onclick="openModal('chat2')">▶ 查看：建立人设与化解冷淡案例</a>
+
+    <h3>第三步：挖掘需求 (找准窗口)</h3>
+    <p><b>目的：</b>了解女生的信息，判断她的需求点，为后续升温做铺垫。</p>
+    <p><b>方法：</b>关注女生透露的工作状态、家庭情况、兴趣爱好等。例如女生是大三学生，对踏入社会恐慌（需求是前辈指点），此时你以过来人身份指导她，建立感情基础。</p>
+
+    <h3>第四步：引导暧昧 (关键步骤)</h3>
+    <p><b>目的：</b>从朋友关系过渡到暧昧关系。</p>
+    <p><b>原则：</b>绝不能强行耍流氓，必须从女生的回复里找突破口，并且话题要能收得回来。</p>
+    <p><b>测试机制：</b>女生回复表情包或“哈哈哈”属于“反应一般”；女生反问、假设性回复（如“那你要带我去吃什么？”）属于“反应良好”，可适当延续。</p>
+    <a class="case-link" onclick="openModal('chat3')">▶ 查看：引导暧昧与推拉实战案例</a>
+
+    <h3>第五步：感情升温 (邀约与冷处理)</h3>
+    <p><b>目的：</b>达成共识，像情侣一样对话，最终走向线下。</p>
+    <p><b>技巧：</b>若发起猛攻导致女生产生防御心理，需使用“冷处理”（欲擒故纵）。像逗猫咪一样，你越是有意无意挠一下，她反而越想找你。然后顺水推舟进行邀约。</p>
+    <a class="case-link" onclick="openModal('chat4')">▶ 查看：感情升温与化解危机案例</a>
+
+    <!-- 第三部分：高情商接话 -->
+    <h2>第三部分：高情商接话——关键词抓取法</h2>
+    <p><b>原理：</b>精准抓取对方话语中的关键信息（名词、动词、形容词、副词），并主动延展。向对方发送“我在认真听，我对你感兴趣”的信号，激活表达欲。</p>
+
+    <h3>1. 抓取“感受/形容词”延展</h3>
+    <p>例如女生说：“最近工作好烦心啊，感觉身心俱疲。”</p>
+    <a class="case-link" onclick="openModal('chat5')">▶ 查看：感受型词语正确与错误回应</a>
+
+    <h3>2. 抓取“具体名词”延展</h3>
+    <p>例如女生说：“我刚养了只布偶猫，好可爱哈哈哈。”</p>
+    <a class="case-link" onclick="openModal('chat6')">▶ 查看：名词延展正确与错误回应</a>
+
+    <h3>3. 横向关联法（分享经历）</h3>
+    <p>例如女生说：“我刚去重庆旅游回来，太好玩了。”</p>
+    <a class="case-link" onclick="openModal('chat7')">▶ 查看：分享经历与打开话题</a>
+
+    <!-- 第四部分：避坑指南 -->
+    <h2>第四部分：沟通避坑指南</h2>
+    <ul>
+        <li><b>不要审讯：</b>避免连环问“然后呢？”“还有吗？”。多用“分享+提问”模式。</li>
+        <li><b>不要强行炫技：</b>哪怕你很懂，也要以探讨和好奇的姿态交流。</li>
+        <li><b>先共情再延展：</b>如果她提到“累”、“烦”，先共情（“听起来真不容易”），再延展，不要忽略情绪直接跳到下一个话题。</li>
+        <li><b>注意比例与切换：</b>良性对话是双向的。话题聊尽时，用“对了，说到这个让我想起…”自然切换。</li>
+    </ul>
+
+    <!-- 第五部分：核心思维 -->
+    <h2>第五部分：核心思维总结</h2>
+    <ul>
+        <li><b>时代变了：</b>父母那代“对女生好、送礼物”就能感动人的方法已经失效。现在女生需要的是情绪价值、懂她、能被带领。</li>
+        <li><b>拒绝舔狗：</b>对女生好是有前提的（她对你也有好感），否则就是备胎。女人永远喜欢能带领引导她的男人。</li>
+        <li><b>能力大于一切：</b>当拥有正确的恋爱能力（价值展示、聊天框架、约会能力），脱单会非常容易。感动自己的方式最终只会让对方远离你。</li>
+    </ul>
+</div>
+
+<!-- ==================== 弹窗与聊天记录区 ==================== -->
+
+<!-- 案例1：破冰 -->
+<div class="modal-overlay" id="chat1">
+    <div class="modal-content">
+        <div class="modal-header"><span class="close-btn" onclick="closeModal('chat1')">✕</span>张思琪</div>
+        <div class="chat-container">
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">果然是个可爱类型的逗比</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">表情包出卖了你</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">[害羞表情包]</div></div>
+            <div class="note-red">女生态度软化，主动推进</div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">我叫张思琪</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">你呢</div></div>
+            <div class="note-red">✅ 女生主动交换信息（良好信号）</div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">你叫我啊胜就好了</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">这样就是有备注的人了，不一般了</div></div>
+            <div class="note-red">✅ 幽默的方式延续话题，打破查户口氛围</div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">已备注 莫辜负</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">啊哟</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">嘴巴真会说话</div></div>
+            <div class="note-red">✅ 女生被逗开心，破冰成功</div>
+        </div>
+    </div>
+</div>
+
+<!-- 案例2：人设与化解 -->
+<div class="modal-overlay" id="chat2">
+    <div class="modal-content">
+        <div class="modal-header"><span class="close-btn" onclick="closeModal('chat2')">✕</span>乔乔</div>
+        <div class="chat-container">
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">哇，这么会给安全感</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">好呢</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">我这两天比较忙</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">前两天刚谈了个项目合作</div></div>
+            <div class="note-red">✅ 建立有事业心、上进心的人设</div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">想我了？</div></div>
+            <div class="note-red">✅ 高情商测试，敢于调侃</div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">赚钱最重要哈哈</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">想又见不到</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">你没约我啊</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">你不刚说最近忙嘛</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">那也要看谁约咯</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">有的人约可能我很忙</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">有的人约可能我就能抽出时间</div></div>
+            <div class="note-red">✅ 建立“不随便”的人设，侧面烘托女生的特别</div>
+        </div>
+    </div>
+</div>
+
+<!-- 案例3：引导暧昧 -->
+<div class="modal-overlay" id="chat3">
+    <div class="modal-content">
+        <div class="modal-header"><span class="close-btn" onclick="closeModal('chat3')">✕</span>某女生</div>
+        <div class="chat-container">
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">[吐舌头的表情包]</div></div>
+            <div class="note-red">根据女生表情包引导暧昧（切入点在舌头）</div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">会画清明上河图吗</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">什么东西</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">[懵逼表情]</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">舌吻的时候 舌头动的频率</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">哈哈哈哈哈哈</div></div>
+            <div class="note-red">✅ 有趣的表达暧昧话题，合理收回</div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">哈哈哈哈哈哈</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">我不懂</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">没试过</div></div>
+            <div class="note-red">✅ 女生接受升温调侃（给窗口）</div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">没关系</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">下次我教你</div></div>
+            <div class="note-red">✅ 延伸暧昧氛围</div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">[男生紧张表情包]</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">[男生霸气表情包：鸡鸡短话还多]</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">这个表情包送给你</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">😂😂</div></div>
+            <div class="note-red">✅ 女生主动调侃（进入暧昧框架）</div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">那我把这个图送给你：别废话，你上我下，还是我上你下</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">前后不给</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">？</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">你不行，吃不消的</div></div>
+            <div class="note-red">✅ 推拉组合，制造情绪波动</div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">哈哈哈哈哈哈</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">我怕你腿子软</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">我怕你起不来</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">谢谢您</div></div>
+            <div class="note-red">✅ 女生反击调侃（彻底进入暧昧状态）</div>
+        </div>
+    </div>
+</div>
+
+<!-- 案例4：感情升温 -->
+<div class="modal-overlay" id="chat4">
+    <div class="modal-content">
+        <div class="modal-header"><span class="close-btn" onclick="closeModal('chat4')">✕</span>翠茹</div>
+        <div class="chat-container">
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">跟我谈就会发现我的脾气很大，只不过是为了赚钱而已</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">钱不是万能的，但没钱是万万不能</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">很多事儿都是因为没钱</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">而且你也说了你前任不图你钱</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">这样也显得我更不懂事了😅</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">她就是这样，把自己搞得很累</div></div>
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">虽然我也很难喜欢上别人吧，但是我喜欢上的人一定要有物质基础</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">这也是对自己负责</div></div>
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">又有谁会愿意跟着一个人吃苦</div></div>
+            <div class="note-red">✅ 不反驳女生的价值观，顺着女生的话去延伸，展示成熟与共情</div>
+        </div>
+    </div>
+</div>
+
+<!-- 案例5：感受延展 -->
+<div class="modal-overlay" id="chat5">
+    <div class="modal-content">
+        <div class="modal-header"><span class="close-btn" onclick="closeModal('chat5')">✕</span>某女生</div>
+        <div class="chat-container">
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">最近工作好烦心啊，感觉身心俱疲</div></div>
+            
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble error">大家都一样，我也累</div></div>
+            <div class="note-red">❌ 直男回复：直接把路堵死，女生对你下头</div>
+
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">听起来是遇到棘手的事了？是项目本身难，还是和人协作有关？</div></div>
+            <div class="note-red">✅ 正确回复：共鸣 + 引导说细节</div>
+
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">我上个月也有段类似时期，喘不过气。这时候我就会开着车放着音乐去兜风，你一般烦心的时候，会做什么让自己放松一下呢？</div></div>
+            <div class="note-red">🌟 进阶回复：关联自己 + 提供分享机会</div>
+        </div>
+    </div>
+</div>
+
+<!-- 案例6：名词延展 -->
+<div class="modal-overlay" id="chat6">
+    <div class="modal-content">
+        <div class="modal-header"><span class="close-btn" onclick="closeModal('chat6')">✕</span>某女生</div>
+        <div class="chat-container">
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">我刚养了只布偶猫，好可爱哈哈哈</div></div>
+            
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble error">猫是可爱，感觉你们女生都喜欢猫，我们男生就不喜欢猫，喜欢狗</div></div>
+            <div class="note-red">❌ 直男回复：一句话让女生无语</div>
+
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">布偶猫！听说性格像小狗一样粘人，你家那位也是个小跟屁虫嘛</div></div>
+            <div class="note-red">✅ 正确回复：细节 + 趣味想象</div>
+
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">看来你是个资深猫奴哈哈哈，是不是早就想养，这次终于遇到‘真命天猫’，让你下定决心去伺候猫主子了</div></div>
+            <div class="note-red">🌟 进阶回复：接收喜悦 + 挖掘故事</div>
+        </div>
+    </div>
+</div>
+
+<!-- 案例7：横向关联 -->
+<div class="modal-overlay" id="chat7">
+    <div class="modal-content">
+        <div class="modal-header"><span class="close-btn" onclick="closeModal('chat7')">✕</span>某女生</div>
+        <div class="chat-container">
+            <div class="chat-row left"><div class="avatar"></div><div class="bubble">我刚去重庆旅游回来，太好玩了</div></div>
+            
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble error">羡慕啊，真有钱</div></div>
+            <div class="note-red">❌ 直男回复：终结话题，让人无语</div>
+
+            <div class="chat-row right"><div class="avatar"></div><div class="bubble">重庆！我去年去的，为了吃一家藏在防空洞里的火锅，迷路了半小时。你这次美食探索有没有类似‘冒险’，快跟我分享分享哈哈</div></div>
+            <div class="note-red">✅ 正确回复：关联你的经历，创造共鸣 + 分享趣事 + 打开话题</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 打开弹窗
+    function openModal(id) {
+        document.getElementById(id).style.display = 'flex';
+        // 防止底层页面滚动
+        document.body.style.overflow = 'hidden';
+    }
+
+    // 关闭弹窗
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // 点击遮罩层关闭弹窗
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal-overlay')) {
+            event.target.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    }
+</script>
+
+</body>
+</html>
+<!-- published by HTML速跑 -->
