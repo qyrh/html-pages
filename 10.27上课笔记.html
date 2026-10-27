@@ -1,0 +1,2709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="恋爱与聊天学习笔记，包含价值、聊天步骤、接话方法和案例。">
+<meta name="color-scheme" content="light">
+<title>恋爱脱单与高情商聊天</title>
+<style>
+/* ============================================================
+   0. 基础变量与重置
+   ============================================================ */
+:root{
+  --green:#07c160;
+  --green-deep:#058a45;
+  --green-dark:#0b3d2e;
+  --green-soft:#e9f8ef;
+  --green-softer:#f3fbf6;
+  --ink:#1f2328;
+  --ink-2:#3b424b;
+  --muted:#6b7280;
+  --faint:#9aa1ab;
+  --line:#e5e8e6;
+  --bg:#f2f5f3;
+  --card:#ffffff;
+  --warm:#b7791f;
+  --warm-soft:#fff8e6;
+  --red:#d92d20;
+  --red-soft:#fff1f0;
+  --blue:#175cd3;
+  --blue-soft:#eff6ff;
+  --purple:#6941c6;
+  --purple-soft:#f5f3ff;
+  --radius-lg:24px;
+  --radius:16px;
+  --radius-sm:12px;
+  --shadow:0 18px 50px rgba(14,42,28,.07);
+  --shadow-sm:0 4px 14px rgba(14,42,28,.05);
+  --max:1120px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{
+  scrollbar-gutter:stable;
+  -webkit-text-size-adjust:100%;
+}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 8% 0%,rgba(7,193,96,.10),transparent 32rem),
+    radial-gradient(circle at 95% 18%,rgba(183,121,31,.08),transparent 28rem),
+    var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  text-rendering:optimizeLegibility;
+}
+body.modal-open{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:var(--green-deep);text-underline-offset:3px}
+a:hover{color:var(--green)}
+button{font:inherit}
+::selection{background:rgba(7,193,96,.22)}
+
+.skip-link{
+  position:fixed;left:14px;top:-60px;z-index:2000;
+  background:var(--green-dark);color:#fff;padding:10px 16px;
+  border-radius:0 0 10px 10px;text-decoration:none;transition:top .2s;
+}
+.skip-link:focus{top:0;color:#fff}
+
+/* ============================================================
+   1. 阅读进度与顶部导航
+   ============================================================ */
+.progress{
+  position:fixed;inset:0 0 auto 0;height:4px;z-index:1500;
+  background:transparent;pointer-events:none;
+}
+.progress span{
+  display:block;height:100%;width:100%;
+  background:linear-gradient(90deg,#07c160,#45d98b,#b7f0cd);
+  transform:scaleX(0);transform-origin:0 50%;
+  will-change:transform;
+}
+
+.toc{
+  position:sticky;top:0;z-index:900;
+  background:rgba(255,255,255,.92);
+  border-bottom:1px solid rgba(20,50,32,.08);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.toc-inner{
+  max-width:var(--max);margin:0 auto;padding:0 18px;
+  display:flex;align-items:center;gap:8px;
+  min-height:58px;overflow-x:auto;scrollbar-width:none;
+}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-brand{
+  flex:0 0 auto;display:flex;align-items:center;gap:9px;
+  margin-right:8px;font-weight:800;font-size:14px;color:var(--green-dark);
+  letter-spacing:.02em;white-space:nowrap;
+}.toc a{
+  flex:0 0 auto;display:inline-flex;align-items:center;
+  padding:7px 11px;border-radius:999px;
+  color:var(--muted);text-decoration:none;font-size:13.5px;
+  white-space:nowrap;transition:background .18s,color .18s;
+}
+.toc a:hover{background:var(--green-soft);color:var(--green-deep)}
+.toc a.active{background:var(--green-deep);color:#fff}
+.toc a.toc-brand{color:var(--green-dark);font-weight:800;padding-left:0;padding-right:10px}
+
+/* ============================================================
+   2. 标题
+   ============================================================ */
+.note-head{
+  max-width:var(--max);margin:0 auto;
+  padding:clamp(34px,6vw,56px) 22px 16px;
+}
+.note-head h1{
+  margin:0;color:var(--ink);
+  font-size:clamp(1.7rem,4vw,2.4rem);
+  line-height:1.3;letter-spacing:-.02em;font-weight:800;
+}
+
+/* ============================================================
+   3. 主体版式
+   ============================================================ */
+main{max-width:var(--max);margin:0 auto;padding:0 18px 34px}
+.section{
+  position:relative;
+  margin:26px 0;
+  padding:clamp(24px,4.4vw,46px);
+  background:var(--card);
+  border:1px solid rgba(18,60,36,.06);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  scroll-margin-top:78px;
+}
+.section-head{margin-bottom:26px}
+.section-kicker{
+  display:flex;align-items:center;gap:9px;
+  margin-bottom:8px;color:var(--green-deep);
+  font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+}
+.section-kicker .num{
+  display:inline-grid;place-items:center;
+  width:26px;height:26px;border-radius:8px;
+  background:var(--green-soft);color:var(--green-deep);
+  font-size:12px;letter-spacing:0;
+}
+h2{
+  margin:0 0 10px;
+  font-size:clamp(1.45rem,3.2vw,2.05rem);
+  line-height:1.3;letter-spacing:-.02em;color:var(--ink);
+}
+h3{
+  margin:30px 0 10px;
+  font-size:clamp(1.08rem,2.2vw,1.28rem);
+  line-height:1.45;color:var(--ink);
+}
+h4{margin:0 0 7px;font-size:1rem;line-height:1.5;color:var(--ink)}
+p{margin:0 0 12px;color:var(--ink-2)}
+.lead{font-size:clamp(15px,2vw,17px);color:var(--ink-2);line-height:1.85}
+.muted{color:var(--muted)}
+.small{font-size:13px;line-height:1.7}
+.tiny{font-size:12px;line-height:1.65}
+strong,b{color:var(--ink)}
+mark{
+  background:linear-gradient(transparent 55%,#c9f7d9 0);
+  color:inherit;padding:0 1px;
+}
+
+.grid-2,.grid-3,.grid-4{display:grid;gap:14px}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+.card{
+  padding:18px;border-radius:var(--radius);
+  background:#fff;border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);
+}
+.card.soft{background:var(--green-softer);border-color:#d9f0e2;box-shadow:none}
+.card.good{background:#f7fdf9;border-color:#cdeed9;box-shadow:none}
+.card.warm{background:var(--warm-soft);border-color:#f2dfb0;box-shadow:none}
+.card.blue{background:var(--blue-soft);border-color:#d4e5ff;box-shadow:none}
+.card.purple{background:var(--purple-soft);border-color:#e5ddff;box-shadow:none}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+
+ul,ol{margin:0 0 14px;padding-left:1.25em;color:var(--ink-2)}
+li{margin:5px 0}
+li::marker{color:var(--green-deep)}
+ul.clean{list-style:none;padding-left:0}
+ul.clean li{position:relative;padding-left:20px}
+ul.clean li::before{
+  content:"";position:absolute;left:2px;top:.72em;
+  width:6px;height:6px;border-radius:50%;background:var(--green);
+}
+
+.pill{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:3px 9px;border-radius:999px;
+  background:var(--green-soft);color:var(--green-deep);
+  font-size:12px;font-weight:700;line-height:1.7;
+}
+.pill.warm{background:var(--warm-soft);color:var(--warm)}
+.pill.red{background:var(--red-soft);color:var(--red)}
+.pill.blue{background:var(--blue-soft);color:var(--blue)}
+.pill.gray{background:#f2f4f3;color:var(--muted)}
+
+.callout{
+  position:relative;
+  margin:18px 0;padding:16px 18px 16px 20px;
+  border-radius:14px;background:var(--green-softer);
+  border:1px solid #d8f0e1;color:var(--ink-2);
+}
+.callout::before{
+  content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;
+  border-radius:0 4px 4px 0;background:var(--green);
+}
+.callout.info{background:var(--blue-soft);border-color:#d6e6ff}
+.callout.info::before{background:var(--blue)}
+.callout.warn{background:var(--warm-soft);border-color:#f0dfb8}
+.callout.warn::before{background:#d69e2e}
+.callout.danger{background:var(--red-soft);border-color:#ffd7d3}
+.callout.danger::before{background:var(--red)}
+.callout.quote{background:#faf9f6;border-color:#eee8dc}
+.callout.quote::before{background:#b7791f}
+.callout p:last-child{margin-bottom:0}
+.callout-title{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-weight:800;color:var(--ink)}
+.callout-title .ico{
+  display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;
+  background:rgba(7,193,96,.13);color:var(--green-deep);font-size:13px;
+}
+.callout.warn .callout-title .ico{background:rgba(214,158,46,.16);color:#92610b}
+.callout.danger .callout-title .ico{background:rgba(217,45,32,.12);color:var(--red)}
+.callout.info .callout-title .ico{background:rgba(23,92,211,.10);color:var(--blue)}
+
+.blockquote{
+  margin:18px 0;padding:16px 18px;
+  border-left:4px solid var(--green);
+  background:linear-gradient(90deg,var(--green-softer),#fff);
+  border-radius:0 14px 14px 0;
+  color:var(--ink-2);font-size:15px;
+}
+.blockquote p:last-child{margin-bottom:0}
+.blockquote cite{display:block;margin-top:6px;color:var(--muted);font-size:12px;font-style:normal}
+
+/* ============================================================
+   4. 表格
+   ============================================================ */
+.table-wrap{
+  margin:16px 0;overflow-x:auto;
+  border:1px solid var(--line);border-radius:14px;
+  background:#fff;
+}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:14px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #eef1ef}
+th{
+  background:#f7faf8;color:var(--ink);font-size:12.5px;
+  letter-spacing:.03em;white-space:nowrap;
+}
+tr:last-child td{border-bottom:0}
+td{color:var(--ink-2)}
+td strong{color:var(--ink)}
+.table-wrap.compact table{min-width:420px}
+.table-wrap.compact th,.table-wrap.compact td{padding:9px 12px}
+
+/* ============================================================
+   5. 流程 / 步骤
+   ============================================================ */
+.flow{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;margin:20px 0 6px;
+}
+.flow-step{
+  position:relative;padding:14px 12px;
+  border:1px solid var(--line);border-radius:14px;
+  background:#fff;box-shadow:var(--shadow-sm);
+}
+.flow-step:not(:last-child)::after{
+  content:"→";position:absolute;right:-13px;top:50%;
+  transform:translateY(-50%);color:#b6c6bd;font-weight:800;z-index:2;
+}
+.flow-step .n{
+  display:inline-grid;place-items:center;width:24px;height:24px;
+  border-radius:8px;background:var(--green-soft);color:var(--green-deep);
+  font-size:12px;font-weight:900;margin-bottom:7px;
+}
+.flow-step b{display:block;font-size:14px;line-height:1.4}
+.flow-step small{display:block;margin-top:3px;color:var(--muted);font-size:11.5px;line-height:1.5}
+
+.step-block{
+  margin:22px 0 0;padding:22px;
+  border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(180deg,#fff,#fbfdfb);
+}
+.step-block + .step-block{margin-top:16px}
+.step-title{display:flex;align-items:flex-start;gap:13px;margin-bottom:12px}
+.step-title .step-num{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:42px;height:42px;border-radius:13px;
+  background:var(--green-dark);color:#fff;
+  font-weight:900;font-size:14px;
+  box-shadow:0 6px 14px rgba(11,61,46,.18);
+}
+.step-title h3{margin:0}
+.step-title p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.step-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.step-meta .meta{
+  padding:12px 13px;border-radius:12px;
+  background:#f7faf8;border:1px solid #e9f1ec;
+}
+.step-meta .meta b{display:block;font-size:12px;color:var(--green-deep);letter-spacing:.04em;margin-bottom:2px}
+.step-meta .meta span{font-size:13px;color:var(--ink-2);line-height:1.65}
+
+/* ============================================================
+   6. 案例按钮 / 折叠
+   ============================================================ */
+.case-link-row{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  margin:14px 0;
+}
+.case-link-label{font-size:12px;color:var(--muted)}
+.case-link{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 10px;border:1px solid #b9e6c9;border-radius:8px;
+  background:#f3fbf6;color:var(--green-deep);
+  font-size:13px;font-weight:700;line-height:1.5;
+  text-align:left;cursor:pointer;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.case-link::before{content:"▶";font-size:9px;line-height:1}
+.case-link:hover{background:var(--green-deep);border-color:var(--green-deep);color:#fff}
+.case-link:focus-visible{outline:3px solid rgba(7,193,96,.30);outline-offset:2px}
+
+details.fold{
+  margin:16px 0;border:1px solid var(--line);border-radius:14px;
+  background:#fff;overflow:hidden;
+}
+details.fold > summary{
+  cursor:pointer;list-style:none;
+  padding:13px 16px;background:#f8faf9;
+  font-weight:700;font-size:14px;color:var(--ink);
+  display:flex;align-items:center;gap:8px;
+}
+details.fold > summary::-webkit-details-marker{display:none}
+details.fold > summary::before{
+  content:"+";display:inline-grid;place-items:center;
+  width:21px;height:21px;border-radius:7px;
+  background:var(--green-soft);color:var(--green-deep);
+  font-weight:900;font-size:13px;
+}
+details.fold[open] > summary::before{content:"−"}
+details.fold > .fold-body{padding:15px 16px 17px;border-top:1px solid var(--line)}
+details.fold > .fold-body > :last-child{margin-bottom:0}
+
+/* ============================================================
+   7. 对照卡 / 迷你聊天
+   ============================================================ */
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.compare .panel{
+  padding:14px;border-radius:14px;border:1px solid var(--line);
+  background:#fff;min-width:0;
+}
+.compare .panel.bad{background:#fffafa;border-color:#f6d9d5}
+.compare .panel.good{background:#f7fdf9;border-color:#cdeed9}
+.compare .panel.plus{background:#f8faff;border-color:#d9e6ff}
+.panel-label{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-bottom:9px;padding:2px 8px;border-radius:999px;
+  font-size:11.5px;font-weight:800;letter-spacing:.02em;
+}
+.panel-label.bad{background:var(--red-soft);color:var(--red)}
+.panel-label.good{background:var(--green-soft);color:var(--green-deep)}
+.panel-label.plus{background:var(--blue-soft);color:var(--blue)}
+.panel .why{margin-top:9px;padding-top:9px;border-top:1px dashed #e3e8e5;color:var(--muted);font-size:12.5px;line-height:1.65}
+
+.mini-chat{display:flex;flex-direction:column;gap:7px}
+.mini-row{display:flex;align-items:flex-start;gap:7px}
+.mini-row.me{justify-content:flex-end}
+.mini-avatar{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:25px;height:25px;border-radius:8px;
+  background:#f0d9d9;color:#8f4c4c;font-size:10px;font-weight:800;
+}
+.mini-row.me .mini-avatar{background:#d9e8f0;color:#315b73;order:2}
+.mini-bubble{
+  max-width:84%;padding:7px 10px;border-radius:9px;
+  background:#fff;border:1px solid #e8ebe9;
+  font-size:13px;line-height:1.6;color:var(--ink-2);
+  word-break:break-word;
+}
+.mini-row.me .mini-bubble{background:#95ec69;border-color:#83dc57;color:#12210c}
+.mini-bubble.sticker{background:#fafafa;border-style:dashed;color:var(--muted);font-size:12px}
+.mini-bubble.voice{color:var(--muted)}
+.mini-bubble.error{background:#fff2f0;border-color:#f3c7c1}
+.mini-bubble.correct{background:#f1fcf5;border-color:#b9e8c9}
+
+/* ============================================================
+   8. 关键词高亮
+   ============================================================ */
+.kw{
+  display:inline-block;padding:0 4px;margin:0 1px;
+  border-radius:5px;background:#fff0b8;color:#6b4d00;
+  font-weight:800;box-decoration-break:clone;
+}
+.kw.green{background:#c9f7d9;color:#075c38}
+.kw.blue{background:#dbeafe;color:#1e40af}
+.kw.purple{background:#ede9fe;color:#5b21b6}
+.sentence{
+  margin:14px 0;padding:15px 16px;border-radius:14px;
+  background:#fbfaf5;border:1px solid #efe9d9;
+  font-size:15px;line-height:2;color:var(--ink);
+}
+.kw-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}
+.kw-branch{
+  padding:11px 12px;border-radius:12px;background:#fff;
+  border:1px solid var(--line);font-size:12.5px;color:var(--ink-2);
+}
+.kw-branch b{display:block;color:var(--ink);font-size:13px;margin-bottom:2px}
+
+/* ============================================================
+   9. 清单 / 时间线
+   ============================================================ */
+.checklist{list-style:none;padding-left:0;margin:14px 0}
+.checklist li{
+  position:relative;padding:8px 10px 8px 36px;
+  border-bottom:1px dashed #e8ece9;color:var(--ink-2);font-size:14px;
+}
+.checklist li:last-child{border-bottom:0}
+.checklist li::before{
+  content:"";position:absolute;left:8px;top:12px;
+  width:15px;height:15px;border-radius:5px;
+  border:1.5px solid #b9c9bf;background:#fff;
+}
+.checklist li::after{
+  content:"✓";position:absolute;left:10.5px;top:8px;
+  color:var(--green-deep);font-size:12px;font-weight:900;
+  opacity:0;transform:scale(.6);transition:.15s;
+}
+.checklist li:hover::after{opacity:.35;transform:scale(1)}
+
+.timeline{position:relative;margin:18px 0 0;padding-left:26px}
+.timeline::before{
+  content:"";position:absolute;left:8px;top:5px;bottom:5px;
+  width:2px;background:linear-gradient(var(--green),#d7f5e2);
+}
+.timeline-item{position:relative;margin:0 0 18px;padding:0 0 0 4px}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-item::before{
+  content:"";position:absolute;left:-24px;top:6px;
+  width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2px solid var(--green);
+  box-shadow:0 0 0 4px rgba(7,193,96,.10);
+}
+.timeline-item .when{
+  display:inline-block;margin-bottom:2px;color:var(--green-deep);
+  font-size:12px;font-weight:800;letter-spacing:.05em;
+}
+.timeline-item b{display:block;margin-bottom:2px}
+.timeline-item p{margin:0;font-size:14px;color:var(--ink-2)}
+
+/* ============================================================
+   10. 聊天弹窗
+   ============================================================ */
+dialog.chat-dialog{
+  width:min(472px,calc(100vw - 22px));
+  max-width:472px;max-height:90vh;max-height:90dvh;
+  margin:auto;padding:0;border:0;background:transparent;
+  overflow:visible;
+}
+dialog.chat-dialog::backdrop{
+  background:rgba(6,20,13,.64);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+}
+.chat-shell{
+  display:flex;flex-direction:column;
+  max-height:90vh;max-height:90dvh;overflow:hidden;
+  background:#ededed;border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  animation:popIn .22s ease-out;
+}
+@keyframes popIn{
+  from{opacity:0;transform:translateY(8px) scale(.97)}
+  to{opacity:1;transform:none}
+}
+.chat-head{
+  flex:0 0 auto;display:flex;align-items:center;gap:10px;
+  padding:12px 14px;background:#f7f7f7;border-bottom:1px solid #ddd;
+}
+.chat-head .back{
+  display:grid;place-items:center;width:28px;height:28px;
+  color:#333;font-size:18px;line-height:1;
+}
+.chat-person{display:flex;align-items:center;gap:9px;min-width:0;flex:1}
+.chat-person .ca{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,#f3d6d6,#e7bcbc);
+  color:#7c3f3f;font-size:12px;font-weight:900;
+}
+.chat-person strong{display:block;font-size:14.5px;line-height:1.2;color:#222}
+.chat-person small{display:block;margin-top:1px;color:#888;font-size:11px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-close{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:32px;height:32px;border:0;border-radius:50%;
+  background:#e8e8e8;color:#444;cursor:pointer;font-size:15px;
+  transition:background .15s;
+}
+.chat-close:hover{background:#dcdcdc}
+.chat-close:focus-visible{outline:3px solid rgba(7,193,96,.35);outline-offset:2px}
+.chat-body{
+  flex:1 1 auto;overflow-y:auto;overscroll-behavior:contain;
+  padding:16px 13px 24px;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,255,255,.55),transparent 18rem),
+    #ededed;
+  scrollbar-width:thin;
+}
+.chat-date{
+  margin:8px auto 14px;width:max-content;max-width:90%;
+  padding:2px 8px;border-radius:5px;
+  background:rgba(0,0,0,.05);color:#8a8a8a;
+  font-size:11px;text-align:center;
+}
+.msg{display:flex;align-items:flex-start;gap:8px;margin:9px 0}
+.msg.me{justify-content:flex-end}
+.msg .avatar{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:36px;height:36px;border-radius:8px;
+  background:#f0d9d9;color:#8f4c4c;font-size:11px;font-weight:900;
+}
+.msg.me .avatar{background:#d9e8f0;color:#315b73;order:2}
+.msg .bubble{
+  position:relative;max-width:76%;
+  padding:9px 12px;border-radius:9px;
+  background:#fff;color:#222;
+  font-size:14px;line-height:1.65;
+  word-break:break-word;white-space:pre-wrap;
+  box-shadow:0 1px 1px rgba(0,0,0,.04);
+}
+.msg.me .bubble{background:#95ec69;color:#12210c}
+.msg .bubble::before{
+  content:"";position:absolute;top:12px;left:-5px;
+  border-top:5px solid transparent;border-bottom:5px solid transparent;
+  border-right:5px solid #fff;
+}
+.msg.me .bubble::before{
+  left:auto;right:-5px;border-right:0;border-left:5px solid #95ec69;
+}
+.msg.sticker .bubble{
+  background:#fafafa;border:1px dashed #d6d6d6;
+  color:#777;font-size:12.5px;
+}
+.msg.sticker .bubble::before{border-right-color:#fafafa}
+.msg.me.sticker .bubble{background:#eefbe6;border-color:#bfe6a8;color:#456b32}
+.msg.me.sticker .bubble::before{border-left-color:#eefbe6;border-right-color:transparent}
+.msg.voice .bubble{color:#333}
+.msg.voice .bubble .wave{color:#666;letter-spacing:2px;margin-right:5px}
+.msg .quote{
+  margin-bottom:6px;padding:5px 8px;border-radius:6px;
+  background:#f1f1f1;color:#777;font-size:11.5px;line-height:1.55;
+  border-left:3px solid #d6d6d6;
+}
+.msg.me .quote{background:rgba(255,255,255,.55);border-left-color:rgba(0,0,0,.12);color:#4f5a47}
+.msg-note{
+  margin:4px 0 12px 44px;padding:8px 10px;
+  border-radius:8px;background:rgba(255,255,255,.72);
+  border-left:3px solid var(--green);
+  color:#3b5a45;font-size:11.5px;line-height:1.6;
+}
+.msg-note.bad{border-left-color:#e5484d;color:#8f2f2b;background:#fff7f6}
+.msg-note.warn{border-left-color:#d69e2e;color:#7a540e;background:#fffbf0}
+.msg-note.me{margin-left:44px;margin-right:0}
+.chat-summary{
+  margin:18px 0 2px;padding:13px 14px;
+  border-radius:12px;background:rgba(255,255,255,.88);
+  border:1px solid rgba(7,193,96,.16);
+  color:#3e4a42;font-size:12.5px;line-height:1.75;
+}
+.chat-summary b{display:block;margin-bottom:3px;color:var(--green-deep);font-size:12px;letter-spacing:.04em}
+.chat-summary ul{margin:4px 0 0;padding-left:1.1em}
+.chat-summary li{margin:2px 0}
+.chat-foot{
+  flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:9px 14px;background:#f7f7f7;border-top:1px solid #ddd;
+  color:#999;font-size:10.5px;
+}
+.chat-foot kbd{
+  display:inline-block;padding:1px 5px;border-radius:4px;
+  background:#fff;border:1px solid #d8d8d8;color:#666;
+  font-family:inherit;font-size:10px;
+}
+
+/* ============================================================
+   11. 返回顶部 / 页脚
+   ============================================================ */
+.back-top{
+  position:fixed;right:18px;bottom:18px;z-index:800;
+  width:46px;height:46px;border:0;border-radius:50%;
+  background:var(--green-dark);color:#fff;cursor:pointer;
+  box-shadow:0 10px 24px rgba(11,61,46,.28);
+  display:grid;place-items:center;font-size:18px;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:.2s;
+}
+.back-top.show{opacity:1;visibility:visible;transform:none}
+.back-top:hover{background:var(--green-deep)}
+.back-top:focus-visible{outline:3px solid rgba(7,193,96,.35);outline-offset:3px}
+
+/* ============================================================
+   12. 响应式
+   ============================================================ */
+@media (max-width:900px){
+  .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .flow-step:nth-child(3)::after{display:none}
+}
+@media (max-width:720px){
+  body{font-size:15px}
+  main{padding:0 10px 22px}
+  .section{margin:14px 0;border-radius:18px}
+  .grid-2,.grid-3,.grid-4,.compare,.step-meta,.kw-map{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .flow-step::after{display:none}
+  .toc-inner{min-height:52px;padding:0 12px}
+  .toc-brand{font-size:12.5px}
+  .toc a{font-size:12.5px;padding:6px 9px}
+  dialog.chat-dialog{width:calc(100vw - 12px);max-height:94vh;max-height:94dvh}
+  .chat-shell{max-height:94vh;max-height:94dvh;border-radius:14px}
+  .msg .bubble{max-width:80%;font-size:13.5px}
+  .msg .avatar{width:32px;height:32px;border-radius:7px}
+  .msg-note{margin-left:40px}
+  .chat-body{padding-left:10px;padding-right:10px}
+  .back-top{right:12px;bottom:12px;width:42px;height:42px}
+}
+@media (max-width:420px){
+  .step-block{padding:16px}
+  .card{padding:14px}
+  .chat-person small{max-width:190px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:11.5pt;color:#000}
+  .progress,.toc,.back-top,.case-arrow,.chat-close,.chat-foot{display:none!important}
+  .section{box-shadow:none;border:1px solid #ddd;break-inside:avoid;padding:18px}
+  .card,.callout,.blockquote,.table-wrap,.step-block{break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  details.fold{break-inside:avoid}
+  dialog.chat-dialog{
+    display:none!important;position:static!important;
+    width:100%!important;max-width:100%!important;max-height:none!important;
+    page-break-before:always;
+  }
+  dialog.chat-dialog[open]{display:block!important}
+  .chat-shell{max-height:none!important;box-shadow:none!important;border:1px solid #ccc;background:#fff}
+  .chat-body{overflow:visible!important;max-height:none!important;background:#fff}
+  .msg .bubble{box-shadow:none;border:1px solid #ccc}
+  .msg.me .bubble{background:#eafbe3}
+  .chat-head{background:#f5f5f5}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="note-head">
+  <h1>恋爱脱单与高情商聊天</h1>
+</header>
+
+<nav class="toc" aria-label="页面目录">
+  <div class="toc-inner">
+    <a class="toc-brand" href="#main">目录</a>
+    <a href="#howto" class="active">开篇</a>
+    <a href="#value">价值理论</a>
+    <a href="#framework">五步法</a>
+    <a href="#keywords">接话技巧</a>
+    <a href="#pitfalls">避坑</a>
+    <a href="#mindset">核心思维</a>
+    <a href="#case-study">师兄案例</a>
+    <a href="#training">7天训练</a>
+    <a href="#ethics">边界</a>
+  </div>
+</nav>
+
+<main id="main">
+  <!-- ============================================================
+       开篇：怎么用这份攻略
+       ============================================================ -->
+  <section class="section" id="howto">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">00</span>开篇</div>
+      <h2>聊天为什么需要框架</h2>
+      <p class="lead">聊天没有方向，话题扯一两句就断，聊了几个月还在问“吃了什么”“今天去了哪里”。天天聊这些，很难变成情侣。也有人聊着聊着就不知道下一句说什么，最后归因于“我没有话题”。</p>
+    </div>
+
+    <div class="callout quote">
+      <p>“很多人说自己的问题是聊天没有话题、缺少话题。其实根本原因，是你聊天没有自己的框架。”</p>
+      <p>“聊天并不是照着剧本你来我往，而是我们自己要去主导、引导女生，带领她跟着我们的节奏去聊。每说一句话，就知道女生有哪几种回复，每一种回复应该怎么应对。”</p>
+    </div>
+
+    
+
+    
+
+    
+
+    
+  </section>
+
+  <!-- ============================================================
+       第一部分：价值理论
+       ============================================================ -->
+  <section class="section" id="value">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">01</span>核心理论</div>
+      <h2>恋爱里的两种价值</h2>
+      <p class="lead">恋爱里的价值，大概可以分成两种：<b>硬价值</b>和<b>软价值</b>。硬价值是别人一眼能看到的条件，软价值是相处久了才能感觉到的部分。硬价值短时间内很难改，软价值可以练。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <span class="pill">硬价值 · 直观可见</span>
+        <h3 style="margin-top:12px">生存价值</h3>
+        <p>能够支撑你在这个世界上生存下去、并且在社会中生活得很好的资源。课程里举的例子很直白：</p>
+        <ul class="clean">
+          <li><b>财富与存款：</b>你有没有积蓄，能不能承担生活与未来。</li>
+          <li><b>车与房：</b>最直观的生活基础与稳定感。</li>
+          <li><b>权力与社会地位：</b>你是普通员工还是老板，是普通老百姓还是在体制内有一定位置。</li>
+          <li><b>影响力：</b>像明星一样，很多人知道你；在你的圈子里，你的话有没有分量。</li>
+          <li><b>社会资源：</b>人脉、信息、解决问题的能力。</li>
+        </ul>
+        <p class="small muted">这些条件，决定你在社会上过得怎么样，也让她能看见你的生存能力。</p>
+      </div>
+
+      <div class="card">
+        <span class="pill">硬价值 · 直观可见</span>
+        <h3 style="margin-top:12px">繁衍价值</h3>
+        <p>别人一眼就能看到的生理特征。课程用词比较直白，说到底是看健康、基因和顺不顺眼：</p>
+        <ul class="clean">
+          <li><b>男性：</b>身高一米八几、一米九几；身材强壮；八块腹肌；看起来有安全感；健康、有活力。</li>
+          <li><b>女性：</b>长相好看；眼睛大；鼻梁挺；胸部饱满；臀形好看；身材丰满匀称。</li>
+        </ul>
+        <p class="small muted">这是课程原来的说法。现实里别真拿这些去给人打分；尊重、干净、健康，比分数重要。</p>
+      </div>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-title"><span class="ico">图</span>课程里的价值分类</div>
+      
+      <div class="grid-3" style="margin-top:10px">
+        <div class="card blue" style="box-shadow:none">
+          <h4>男性硬价值</h4>
+          <p class="small"><b>生存：</b>财富、权力、影响力（雄性领导力）、有车有房、社会地位。</p>
+          <p class="small"><b>繁衍：</b>年龄、性能力、责任心（担当、负责、忠诚）、长相外貌、身高体型。</p>
+        </div>
+        <div class="card purple" style="box-shadow:none">
+          <h4>男性软价值</h4>
+          <p class="small"><b>内在：</b>认知思维层次高、各种才艺技能、高超的聊天能力、浪漫的约会能力、学历/阅历/智慧、情商高/幽默风趣、体贴/细心/自信/勇敢。</p>
+        </div>
+        <div class="card warm" style="box-shadow:none">
+          <h4>女性价值（课程补充）</h4>
+          <p class="small"><b>外在：</b>年龄、外貌、罩杯、身高体重。</p>
+          <p class="small"><b>内在：</b>性格、学历、忠诚度、生育能力、家庭环境。</p>
+        </div>
+      </div>
+      
+    </div>
+
+    <h3>软价值</h3>
+    <p>软价值更多是你的内在，不是别人一眼能看出来的；但会随着相处越来越久，慢慢被你的软价值吸引。课程把它拆成三块：</p>
+    <div class="grid-3">
+      <div class="card">
+        <h4>内在价值</h4>
+        <ul class="clean small">
+          <li>认知思维层次高</li>
+          <li>情绪管理能力强、情绪稳定</li>
+          <li>情商特别高</li>
+          <li>多才多艺：骑马、滑雪、高尔夫、小提琴、钢琴、唱歌、各种运动与乐器</li>
+          <li>顶级社交直觉</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>性格特质</h4>
+        <ul class="clean small">
+          <li>有智慧</li>
+          <li>对身边的人细心体贴</li>
+          <li>幽默风趣</li>
+          <li>懂女人、了解女人</li>
+          <li>自信、勇敢、有担当</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>核心技能</h4>
+        <ul class="clean small">
+          <li>超高的聊天能力</li>
+          <li>浪漫的约会能力</li>
+          <li>带领与决策能力</li>
+          <li>社交直觉与分寸感</li>
+          <li>把生活过得有趣的能力</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-title"><span class="ico">✓</span>软价值到底是什么</div>
+      <p>软价值不是讨好。讨好是把自己放得很低；软价值是你自己站得住，也能理解她。随叫随到、无底线付出，不是软价值，是低姿态。你能照顾她，也能照顾自己，这才算。</p>
+    </div>
+
+    <h3>男女择偶时看重的东西</h3>
+    <p>课程的观点很直接：男人择偶时更看重女生好不好看、身材好不好、胸大不大、屁股翘不翘，容易被繁衍价值高的女生吸引；女生择偶时，会更注重男生的生存价值和软价值。</p>
+    <div class="grid-2">
+      <div class="card blue">
+        <h4>男性常见偏好</h4>
+        <p class="small">外貌、身材、健康、年轻感，都是繁衍价值的信号。课程甚至用“胸部饱不饱满、奶水多不多”解释远古时期的择偶。这个说法很直白，但现代女性不是生育工具，外貌偏好也不能拿来物化别人。</p>
+      </div>
+      <div class="card warm">
+        <h4>女性常见偏好</h4>
+        <p class="small">生存价值 + 软价值。女生常说的“想找一个懂我的、爱我的、体贴我的、感觉对的”，这些主要靠软价值：能不能听懂她、接住她的情绪、在关键时刻拿得下主意。</p>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>她口中的需求</th><th>背后的心理</th><th>对应的能力</th></tr></thead>
+        <tbody>
+          <tr><td><b>“你有安全感吗？”</b></td><td>你能不能稳定、靠谱、遇事不慌</td><td>情绪稳定、兑现承诺、懂分寸、生活能力</td></tr>
+          <tr><td><b>“你懂我吗？”</b></td><td>你能不能看见她的情绪和细节</td><td>共情、关键词抓取、倾听、不急着给建议</td></tr>
+          <tr><td><b>“你有主见吗？”</b></td><td>你能不能带领、安排、承担结果</td><td>决策力、规划力、约会安排、遇事担当</td></tr>
+          <tr><td><b>“和你在一起有意思吗？”</b></td><td>你有没有生活、幽默、新鲜感</td><td>聊天能力、才艺、生活丰富度、幽默感</td></tr>
+          <tr><td><b>“你有未来吗？”</b></td><td>你是不是一个持续成长的人</td><td>上进心、职业规划、学习能力、自律</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>这套偏好是怎么来的</h3>
+    <p>课程用远古时代解释这个说法：在原始时代，一个女生非常弱小，手无缚鸡之力，光凭她一个人很难打赢凶猛的野兽，更别提取胜；她想要生存下去、并且活得好，就需要和一个身强体壮的男生结合。男生替她打猎、保护她，让她不被饿死、不被野兽吃掉；她替男生繁衍下一代。</p>
+    <p>久而久之，男生在择偶时会看女生的胸部饱不饱满、奶水多不多，能不能让孩子吃饱——那个时候没有奶粉，所以会优先选择繁衍价值高的女生。女性则会优先选择身强体壮、能保护自己、让自己生存下去的男生。这就是最古老的一种“价值互换”形式的恋爱关系。</p>
+    <div class="callout warn">
+      <div class="callout-title"><span class="ico">!</span>不要把解释当成借口</div>
+      <p>进化视角只能解释“偏好从哪来”，不能证明“谁高谁低”。现在不用靠武力打猎，女性也能经济独立；拿远古那套要求对方“必须服从”，是刻舟求剑。</p>
+    </div>
+
+    <h3>为什么只靠“对她好”不够</h3>
+    <p>演变到今天，男生在找女生谈恋爱、结婚时，依然会优先选择身材好、长得好看、漂亮的女生；但女生会慢慢越来越注重男性的软价值——这个男生懂不懂她。</p>
+    <p>因为时代不同了，不再是靠武力打猎才能生存的时代。现在很多杰出的女孩子，那些网红凭借自己的高学历、高认知，都能找到一份特别好的工作，而且挣的钱比一般男生还多。当代大部分女生不依靠男生，依然能够过得很精彩。所以课程得出结论：<b>当代男生的软价值，比生存价值更能吸引女生。</b></p>
+    <div class="blockquote">
+      <p>“女生一般都会回答：懂我的呀，爱我的呀，体贴我的呀，感觉对的呀。这些，都需要男生的软价值高才能做到。”</p>
+          </div>
+    <p>硬价值当然重要，它决定她愿不愿意见你；软价值决定她愿不愿意留下。你有车有房，只是让她愿意坐下来聊；你能听懂她、让她舒服、让她对以后有画面，她才想继续。</p>
+
+    <h3>哪些东西还能改</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>方面</th><th>能否改变</th><th>课程给的现实判断</th><th>建议</th></tr></thead>
+        <tbody>
+          <tr><td><b>身高</b></td><td>基本定型</td><td>大部分兄弟已经定型，课程不承诺“长高”。</td><td>用体态、健身、穿搭优化视觉比例；别把精力耗在不可控的事上。</td></tr>
+          <tr><td><b>长相</b></td><td>可以改善</td><td>护肤、发型、牙齿、轮廓管理；医美/整形是选择，但要谨慎。</td><td>先做“干净、清爽、有精神”，再谈进阶。</td></tr>
+          <tr><td><b>形象</b></td><td>短期可改</td><td>学习穿搭知识，短时间可以从 1 分提到 4—5 分。</td><td>合身、干净、场景匹配，比名牌更重要。</td></tr>
+          <tr><td><b>财富</b></td><td>长期积累</td><td>不可能一夜暴富；需要 3 年、5 年甚至 10 年。</td><td>把收入、储蓄、职业规划做好；不幻想捷径。</td></tr>
+          <tr><td><b>聊天能力</b></td><td>可训练</td><td>从“只会一问一答、女生不回”到有框架、有情绪，可以从 1 分到 4—5 分。</td><td>学方法 + 总结 + 实战，不背死台词。</td></tr>
+          <tr><td><b>约会能力</b></td><td>可训练</td><td>从面对面紧张、不知所措，到会安排、会转场、会照顾。</td><td>先做 3 次小约会练习，每次只改进一个点。</td></tr>
+          <tr><td><b>社交直觉</b></td><td>可训练</td><td>从被说“钢铁直男、木讷、情商低”，到能读懂不同类型的女生。</td><td>多接触不同的人，事后想一想，不把一次失败当结论。</td></tr>
+          <tr><td><b>情绪稳定</b></td><td>长期</td><td>比“会撩”更要紧；情绪不稳定，技巧越多越危险。</td><td>睡眠、运动、写作、反思；必要时寻求专业帮助。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+
+    
+
+    <details class="fold">
+      <summary>价值自检：如果我是女生，和我聊一小时会累吗？</summary>
+      <div class="fold-body">
+        
+        <div class="table-wrap compact">
+          <table>
+            <thead><tr><th>方面</th><th>自检问题</th><th>分数</th></tr></thead>
+            <tbody>
+              <tr><td>外在形象</td><td>干净、合身、有精神，还是邋遢、油腻、随意？</td><td>1 2 3 4 5</td></tr>
+              <tr><td>生活状态</td><td>有工作/学习/运动/爱好，还是每天只剩刷手机？</td><td>1 2 3 4 5</td></tr>
+              <tr><td>情绪稳定</td><td>被冷落时能稳住，还是一秒焦虑、连发消息？</td><td>1 2 3 4 5</td></tr>
+              <tr><td>共情能力</td><td>能听出她的情绪，还是只会讲道理？</td><td>1 2 3 4 5</td></tr>
+              <tr><td>聊天能力</td><td>能接话、延展、收尾，还是只会问“然后呢”？</td><td>1 2 3 4 5</td></tr>
+              <tr><td>约会能力</td><td>能安排、会转场、懂照顾，还是全程问“去哪”？</td><td>1 2 3 4 5</td></tr>
+              <tr><td>分寸</td><td>尊重拒绝，还是纠缠、试探、情绪勒索？</td><td>1 2 3 4 5</td></tr>
+              <tr><td>幽默感</td><td>能让人放松，还是只会讲冷笑话/开黄腔？</td><td>1 2 3 4 5</td></tr>
+            </tbody>
+          </table>
+        </div>
+        
+      </div>
+    </details>
+
+    
+  </section>
+
+  <!-- ============================================================
+       第二部分：聊天五步法
+       ============================================================ -->
+  <section class="section" id="framework">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">02</span>核心框架</div>
+      <h2>聊天五步法</h2>
+      <p class="lead">跟女生发展的过程，一般分为五个阶段：<b>陌生、朋友、初始、暧昧、亲密关系</b>。对应到聊天，就是五个动作：开场破冰、植入人设、挖掘需求、引导暧昧、感情升温。最后才是确定关系。</p>
+      <p>她不按预想回怎么办？这很正常。聊天不是照着剧本走，也不用她按剧本；能接住她的反应就行。她回哪几种，大概知道怎么接，就够了。</p>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-title"><span class="ico">!</span>别急着跳步</div>
+      <p>聊天追女生是有技巧、有方法的。除非你自身的价值就很高、女生倒追你，否则急于求成，大概率会把关系聊死。刚聊热就表白、刚暧昧就邀约、刚见面就动手动脚，都是“跳步”。跳步的代价，往往是对方瞬间防御，之前打好的基础归零。</p>
+    </div>
+
+    <div class="flow" aria-label="聊天五步法流程">
+      <div class="flow-step"><span class="n">1</span><b>开场破冰</b><small>降低防备，测试聊天意愿</small></div>
+      <div class="flow-step"><span class="n">2</span><b>植入人设</b><small>让她觉得你值得了解</small></div>
+      <div class="flow-step"><span class="n">3</span><b>挖掘需求</b><small>找到她的窗口与痛点</small></div>
+      <div class="flow-step"><span class="n">4</span><b>引导暧昧</b><small>从朋友过渡到暧昧</small></div>
+      <div class="flow-step"><span class="n">5</span><b>感情升温</b><small>像情侣一样对话，走向线下</small></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>阶段</th><th>要解决的问题</th><th>你要做的事</th><th>不要做的事</th></tr></thead>
+        <tbody>
+          <tr><td><b>开场破冰</b></td><td>快速跳过陌生期，降低防备</td><td>有趣开场、联想延伸、轻测试、交换信息</td><td>查户口、土味情话、刚聊好就邀约</td></tr>
+          <tr><td><b>植入人设</b></td><td>让她认同你这个人值得了解</td><td>用观点、日常、故事侧面展示；让她给你贴标签</td><td>自夸、说教、人设与行为不一致</td></tr>
+          <tr><td><b>挖掘需求</b></td><td>找准她的窗口，为升温铺垫</td><td>关注工作/学业/家庭/兴趣/情绪；交换信息</td><td>连环问、聊她没经历过的深水区、独角戏</td></tr>
+          <tr><td><b>引导暧昧</b></td><td>让她接受并主动聊暧昧话题</td><td>从她的回复找窗口；轻测试；能收能放</td><td>硬开黄腔、目的性太强、上头就失控</td></tr>
+          <tr><td><b>感情升温</b></td><td>达成共识，像情侣一样对话</td><td>生活话题、轻调情、邀约、约会、冷处理</td><td>只聊工作、急于表白、暴露需求、冷暴力</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title"><span class="ico">✓</span>什么叫“带着聊”</div>
+      <p>课程说，聊天不是照剧本，是我们带着聊。这里的“带”不是控制她，是你来给方向、接尴尬、定节奏。她不用费力想下一句，但也可以随时说不。带得稳，不靠凶。</p>
+    </div>
+
+    <!-- ==================== 第一步 ==================== -->
+    <div class="step-block" id="step1">
+      <div class="step-title">
+        <div class="step-num">01</div>
+        <div>
+          <h3>开场破冰</h3>
+          <p>目的：降低防备心，测试她有没有聊天意愿，避免查户口式聊天。</p>
+        </div>
+      </div>
+
+      <div class="step-meta">
+        <div class="meta"><b>目的</b><span>让她觉得你有趣、愿意聊，而不是“审问”她。</span></div>
+        <div class="meta"><b>方法</b><span>有趣表情包/场景开场；把她的回复联想成话题；轻测试。</span></div>
+        <div class="meta"><b>成功标志</b><span>她主动接话题、反问你，甚至主动开启话题。</span></div>
+      </div>
+
+      <h4>先避开四个破冰误区</h4>
+      <div class="grid-2">
+        <div class="card warm">
+          <h4>❌ 直男开场</h4>
+          <p class="small">“你叫什么名字？”“在干嘛？”“多大了？”——通过好友就直接查户口，女生可能直接不想回。</p>
+        </div>
+        <div class="card warm">
+          <h4>❌ 土味情话</h4>
+          <p class="small">把抖音、网上看到的话术不分场合地背一遍。女生要么觉得你不可靠，要么觉得你情商有问题。</p>
+        </div>
+        <div class="card warm">
+          <h4>❌ 反应好就立刻进攻</h4>
+          <p class="small">开场不错，马上问“有没有男朋友”“今晚出来玩”，一句话把刚打好的基础搞砸，后面很难救。</p>
+        </div>
+        <div class="card warm">
+          <h4>❌ 把破冰当“开场白”</h4>
+          <p class="small">破冰不是一句漂亮的开场白。它是让她从防备变成愿意聊。你一个人说、她只敷衍，那不算破冰。</p>
+        </div>
+      </div>
+
+      <h4>大致流程</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="when">STEP 1</span>
+          <b>用简单但有趣的方式开场</b>
+          <p>一个有趣的表情包、一个场景观察、一句轻松的调侃，都比“在干嘛”好。目的是测试她有没有时间、有没有兴趣接你的话题。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">STEP 2</span>
+          <b>不管她回什么，都联想成一个话题</b>
+          <p>她发表情包，不要只回“哈哈”。比如她发害羞表情，你可以说：“被哪个小哥哥撩得心花怒放了？”——调侃她，同时制造一个她能接的话题。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">STEP 3</span>
+          <b>她问信息时，给信息 + 补一句可延续的话</b>
+          <p>不要只把名字甩过去，也不要加“多多指教”这种像相亲/谈业务的客套。给完信息，补一句让她能配合你继续的话。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">STEP 4</span>
+          <b>轻微测试，不急着暧昧</b>
+          <p>用“场景 + 角色”的方式轻轻试一下，比如“抱成一团就没事了”。她不接，就刹车、转移话题；她接，再往下走。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">STEP 5</span>
+          <b>直到她主动互动，才算破冰成功</b>
+          <p>她愿意接你的梗、反问你、主动开启话题，甚至主动报信息——这才是破冰。否则只是你一个人在表演。</p>
+        </div>
+      </div>
+
+      <h4>三种开场思路</h4>
+      <div class="grid-3">
+        <div class="card soft">
+          <span class="pill">逻辑 1</span>
+          <h4 style="margin-top:9px">表情包开场</h4>
+          <p class="small">用有趣的表情包测试她的聊天意愿。她回表情，就把表情里的情绪/动作联想成一个话题，而不是只回“哈哈”。</p>
+        </div>
+        <div class="card soft">
+          <span class="pill">逻辑 2</span>
+          <h4 style="margin-top:9px">情绪反差开场</h4>
+          <p class="small">她发两个“微笑”表情，明显有点敷衍。你可以说：“这个表情和今天的天气很配，没有任何感情。”——表达态度，又让她能接。</p>
+        </div>
+        <div class="card soft">
+          <span class="pill">逻辑 3</span>
+          <h4 style="margin-top:9px">信息 + 氛围</h4>
+          <p class="small">她问名字，你给名字后补一句：“这样就是有备注的人了，不一般了。”再加一句“已备注，莫辜负”，把普通信息变成关系氛围。</p>
+        </div>
+      </div>
+
+      <div class="callout info">
+        <div class="callout-title"><span class="ico">例</span>“这个表情和今天的天气很配，没有任何感情”为什么有效？</div>
+        <p><b>第一，表达态度：</b>“你太冷漠了，我不喜欢。”但用开玩笑的方式说，女生能接受。</p>
+        <p><b>第二，制造话题：</b>把毫无意义的表情，变成“聊情绪”的话题，引导她继续。本来气氛尴尬，这句话一下把氛围拉回来。</p>
+        <p class="small muted">核心是别纠结聊什么。拿话题当工具，把她的情绪带起来，这才算会聊。</p>
+      </div>
+
+      <h4>怎么判断她的反应</h4>
+      <div class="compare">
+        <div class="panel bad">
+          <span class="panel-label bad">反应一般</span>
+          <div class="mini-chat">
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">[表情包]</div></div>
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">哈哈哈哈</div></div>
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">嗯嗯</div></div>
+          </div>
+          <p class="why">只接受、不延伸，说明她礼貌/不反感，但还没有明显好感。不要立刻升级、邀约、表白。</p>
+        </div>
+        <div class="panel good">
+          <span class="panel-label good">反应良好</span>
+          <div class="mini-chat">
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">那你要带我去吃什么呀？</div></div>
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">听起来不错，什么时候？</div></div>
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">说不定会哦</div></div>
+          </div>
+          <p class="why">反问、假设性回复、主动提供信息，才是明显的好感信号。课程说：其他 80% 的回复，都只能叫“反应一般”。</p>
+        </div>
+      </div>
+      <p class="small muted">别急着给她贴“有戏/没戏”的标签。看反应，是为了决定现在该往前走，还是先停一下。她反应一般，不代表讨厌你，只代表现在还不适合升级。</p>
+
+      <p class="case-link-row"><button class="case-link" type="button" data-dialog="case1">张思琪：从破冰到“牵个妹妹”</button></p>
+
+      <div class="callout quote">
+        <p>“好的开场白固然重要，但这也仅仅是开了个好头。女生不会因为你开场白很好，就对你一见钟情。破冰，是成功降低女生对你的防备心，觉得你这个人有趣，并且愿意跟你聊天。不是全程你一个人在说、女生全程敷衍；她会接上你的话题，甚至主动开启话题。”</p>
+      </div>
+
+      
+    </div>
+
+    <!-- ==================== 第二步 ==================== -->
+    <div class="step-block" id="step2">
+      <div class="step-title">
+        <div class="step-num">02</div>
+        <div>
+          <h3>植入人设</h3>
+          <p>目的：通过聊天让女生意识到你跟别人不一样，有自己的人格魅力和特点。</p>
+        </div>
+      </div>
+
+      <div class="step-meta">
+        <div class="meta"><b>目的</b><span>让她认同你这个人值得了解，产生探索欲。</span></div>
+        <div class="meta"><b>方法</b><span>用观点、日常、故事侧面展示；不直接自夸。</span></div>
+        <div class="meta"><b>原则</b><span>人设必须真实；行为与说法一致，否则就是“假”。</span></div>
+      </div>
+
+      <p>课程对“人设”的定义很朴素：<b>你是一个什么样的人。</b>比如你情商高、有责任心、有上进心。问题在于，你不能直接跟女生说“我情商很高”“我很上进”——她不会信；如果你说完之后，聊天又把天聊死，那就是自己打自己的脸。</p>
+
+      <div class="callout danger">
+        <div class="callout-title"><span class="ico">!</span>人设崩塌的两个典型</div>
+        <p><b>说自己霸道总裁，聊天却跪舔到飞起；</b>说自己是个暖男，聊天却像个流氓。聊天的思维跟表现的人完全不符合，女生就会觉得你这个人不靠谱、很假。</p>
+      </div>
+
+      <h4>三种展示方式</h4>
+      <div class="grid-3">
+        <div class="card">
+          <span class="pill">观点法</span>
+          <h4 style="margin-top:9px">用观点</h4>
+          <p class="small">别讲大道理。挑一件具体的事，说你自己的看法。观点要稳，不偏激，能看出你的底线和生活方式。</p>
+        </div>
+        <div class="card">
+          <span class="pill">日常法</span>
+          <h4 style="margin-top:9px">用日常</h4>
+          <p class="small">分享养猫养狗、做饭、运动、加班项目。她自然会得出“有爱心/细心/有事业心/自律”的结论。</p>
+        </div>
+        <div class="card">
+          <span class="pill">行为法</span>
+          <h4 style="margin-top:9px">用行为</h4>
+          <p class="small">接住她的刁钻问题 = 情商；说到做到 = 靠谱；不随便评价别人 = 成熟。她主动给你贴的标签，才可信。</p>
+        </div>
+      </div>
+
+      <h4>三个例子</h4>
+      <div class="grid-3">
+        <div class="card soft">
+          <p class="small">“我真的很讨厌那些乱丢垃圾污染环境的人。”</p>
+          <p class="tiny muted">→ 展示：热爱环境、爱讲卫生。</p>
+        </div>
+        <div class="card soft">
+          <p class="small">“现在的工作是在积累经验和人脉，明年准备自己出来创业。”</p>
+          <p class="tiny muted">→ 展示：有事业心、敢于拼搏。</p>
+        </div>
+        <div class="card soft">
+          <p class="small">“我不太喜欢不明不白就开始的爱情，喜欢循序渐进。”</p>
+          <p class="tiny muted">→ 展示：对待爱情专一、不搞短期。</p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title"><span class="ico">✓</span>人设不是“包装”，是“被看见”</div>
+        <p>你分享养猫养狗的日常，女生会感受到你有爱心、细心；你分享加班时的工作场景，女生会觉得你有事业心、上进心。这些都是“侧面展示”。但前提是：<b>你确实是这样的人。</b>装出来的人设，撑不过三次见面。</p>
+      </div>
+
+      <p class="case-link-row"><button class="case-link" type="button" data-dialog="case2">乔乔：忙，但不随便</button></p>
+
+      <div class="callout warn">
+        <div class="callout-title"><span class="ico">!</span>三个不要</div>
+        <ul class="clean small">
+          <li><b>不要自夸：</b>“我很优秀/我情商很高/我从不缺女生”——说出来的那一刻，魅力就掉了一半。</li>
+          <li><b>不要说教：</b>她分享生活，不是来听你上课的。先接住，再分享你的看法。</li>
+          <li><b>不要编造：</b>虚构职业、收入、经历，短期可能有效，长期一定翻车；也不尊重对方。</li>
+        </ul>
+      </div>
+
+      
+    </div>
+
+    <!-- ==================== 第三步 ==================== -->
+    <div class="step-block" id="step3">
+      <div class="step-title">
+        <div class="step-num">03</div>
+        <div>
+          <h3>了解她的需求</h3>
+          <p>目的：通过聊天了解女生的信息，判断她的需求点，为后续升温做铺垫。</p>
+        </div>
+      </div>
+
+      <div class="step-meta">
+        <div class="meta"><b>目的</b><span>找到她的“窗口”：她现在最在意、最缺、最想聊什么。</span></div>
+        <div class="meta"><b>方法</b><span>关注工作/学业、家庭、兴趣、情绪；用交换信息代替查户口。</span></div>
+        <div class="meta"><b>禁忌</b><span>连环问、聊她没经历过的深水区、把聊天变成你的独角戏。</span></div>
+      </div>
+
+      <p>聊天过程一定要关注女生给你透露的信息：她目前的工作状态、家庭情况、兴趣爱好等等。因为这些信息可以让你知道她的需求感在哪里。课程给了两个很典型的例子：</p>
+
+      <div class="grid-2">
+        <div class="card blue">
+          <span class="pill blue">场景 A</span>
+          <h4 style="margin-top:9px">即将毕业的学生，对踏入社会恐慌</h4>
+          <p class="small"><b>她的需求：</b>需要有一位社会阅历丰富的人指点迷津、传授经验。</p>
+          <p class="small"><b>你可以：</b>以“过来人”的身份，帮她提前了解职场规则、简历、面试、人际关系；但不要居高临下，更不要编造经历。</p>
+        </div>
+        <div class="card warm">
+          <span class="pill warm">场景 B</span>
+          <h4 style="margin-top:9px">放假了，但不知道出去玩什么</h4>
+          <p class="small"><b>她的需求：</b>现在很无聊，需要有人陪她聊天解闷，或者给她一个轻量的活动建议。</p>
+          <p class="small"><b>你可以：</b>先接住“无聊”，再给两三个具体选项；不要一上来就约“今晚出来”，会显得目的性太强。</p>
+        </div>
+      </div>
+
+      <h4>从哪些信息里找需求</h4>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>信息类型</th><th>她可能会说</th><th>背后的需求</th><th>你可以怎么接</th></tr></thead>
+          <tbody>
+            <tr><td><b>工作/学业</b></td><td>“最近加班好多”“在准备考研”“快毕业了好迷茫”</td><td>压力、方向感、被认可、前辈经验</td><td>先共情，再问细节；分享你的经验，不急着给方案</td></tr>
+            <tr><td><b>家庭</b></td><td>“家里管得比较严”“最近家里有点事”</td><td>被理解、安全感、边界</td><td>轻问一句，不追问隐私；她不想说就转话题</td></tr>
+            <tr><td><b>兴趣</b></td><td>“刚养了猫”“喜欢露营”“在学烘焙”</td><td>分享欲、被看见、找到同好</td><td>抓细节 + 趣味想象 + 挖故事</td></tr>
+            <tr><td><b>情绪</b></td><td>“累死了”“好烦”“今天超开心”</td><td>被安慰、共鸣、陪伴</td><td>先共情，再延展；不要直接讲道理</td></tr>
+            <tr><td><b>社交</b></td><td>“周末跟闺蜜去哪”“同事怎样怎样”</td><td>陪伴、站队、轻松八卦</td><td>接住人物/事件，适度调侃，不评价她朋友</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn">
+        <div class="callout-title"><span class="ico">!</span>关键：不能直接“查户口”</div>
+        <p>“你多大？做什么工作？家里几口人？住哪？”——这不是了解，是审讯。课程说：<b>交换信息就没有什么问题。</b>你先分享一点自己的信息，再自然地问她；她回答后，抓一个关键词继续，而不是连着问下一题。</p>
+      </div>
+
+      <h4>话题深度要匹配</h4>
+      <div class="compare">
+        <div class="panel bad">
+          <span class="panel-label bad">错误：聊她没经历过的深水区</span>
+          <p class="small">她是个大三学生，涉世未深。你抓住“社会职场勾心斗角”细聊，讲得眉飞色舞。</p>
+          <p class="why">她没经历过，也不知道怎么回，最后变成你一个人的独角戏。很多兄弟说“女生不回我”，原因之一就是：话题远超她的经验范围。</p>
+        </div>
+        <div class="panel good">
+          <span class="panel-label good">正确：从她的阶段找切入点</span>
+          <p class="small">她担心实习、害怕进入社会。你用“过来人”的身份，帮她了解职场规则、怎么和同事相处、第一份工作看什么。</p>
+          <p class="why">这是她当下真实的需求，她能接、想问、会觉得你有用。感情基础就是这样一点点建立的。</p>
+        </div>
+      </div>
+
+      <div class="callout info">
+        <div class="callout-title"><span class="ico">例</span>“植入画面”：让线下见面变得顺理成章</div>
+        <p>如果对方是老师，你可以先了解她的工作状态、生活习惯、爱好，为升温做铺垫。然后在聊天里植入画面：“大手牵小手，我做你的老师，带你做某某事情。”——像小时候两小无猜的小朋友，单纯牵手。</p>
+        <p>当她在脑海里已经预演过这个画面，你们线下再做类似的事，就会显得合情合理。画面植入要轻，不能变成性暗示；如果她明显不接，就收回，不要反复试探。</p>
+      </div>
+
+      <div class="callout quote">
+        <p>“你只有知道她的情况之后，才能够方便我们为下一步的升温关系做铺垫。毕竟你也不能直接查户口，对吧？但是交换信息就没有什么问题了。”</p>
+      </div>
+
+      
+    </div>
+
+    <!-- ==================== 第四步 ==================== -->
+    <div class="step-block" id="step4">
+      <div class="step-title">
+        <div class="step-num">04</div>
+        <div>
+          <h3>引导暧昧</h3>
+          <p>目的：从朋友关系过渡到暧昧关系，让她接受，甚至主动跟你聊暧昧话题。</p>
+        </div>
+      </div>
+
+      <div class="step-meta">
+        <div class="meta"><b>切入点</b><span>从她的回复里找突破口，不自己生搬一个暧昧话题。</span></div>
+        <div class="meta"><b>安全绳</b><span>话题一定能拉回来；她不接，就合理收回。</span></div>
+        <div class="meta"><b>节奏</b><span>先测试，再推进；她进你接，她退你收。</span></div>
+      </div>
+
+      <p>这是很多兄弟最缺的一步：很想跟女生进入暧昧关系，但聊了几个月、甚至一两年，还只是朋友。想升温、想聊暧昧，又马上被拒绝；不聊暧昧，又永远没有升温的机会。问题出在：<b>朋友关系和暧昧关系之间，缺少过渡。</b></p>
+
+      <div class="callout danger">
+        <div class="callout-title"><span class="ico">!</span>直接聊暧昧 = 强行耍流氓</div>
+        <p>女生不是非常开放、关系也没到那一步，一般都不会接受。你需要铺垫和引导，让聊暧昧变成一件顺其自然的事。课程给了两条关键原则：</p>
+        <ol>
+          <li><b>引导的话题，要从女生的回复里找突破口，</b>不要强行开启暧昧话题。</li>
+          <li><b>引导的话题，一定是能够拉回来的，</b>不要头脑一热、想都不想就发出去。</li>
+        </ol>
+      </div>
+
+      <h4>引导暧昧的五个动作</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="when">01 · 找窗口</span>
+          <b>她主动给的那个“点”，才是入口</b>
+          <p>她发了吐舌头的表情包、自拍、问你“我腿长不长”、说“没人要我”、抱怨“好累想恋爱”——这些才是窗口。她没有给窗口，你不要硬开。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">02 · 轻测试</span>
+          <b>用“场景 + 角色”包装，而不是直接说性</b>
+          <p>比如“抱成一团就没事了”“出双入对的那种”“带你上街会不会像牵个妹妹”“那男朋友你都不给啊”。场景要合理，让她有退路。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">03 · 看反应</span>
+          <b>表情包/哈哈哈 = 一般；反问/假设 = 良好；拒绝 = 停止</b>
+          <p>她只发表情包，不代表讨厌你，但说明现在不适合继续升级。她反问“那你要带我去吃什么”、假设“说不定会哦”，才是可以往下走的信号。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">04 · 推拉</span>
+          <b>她进你退，她退你收，制造情绪波动</b>
+          <p>她主动调侃你，你可以接住再反推一下：“你不行，吃不消的。”但不要羞辱、不要打压。推拉是玩笑，不是精神控制。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">05 · 收回</span>
+          <b>她不接，就合理撤退，不尴尬</b>
+          <p>“这是我今天在抖音看到的一个梗，觉得挺有趣的。”——把话题收回日常，不让她有压力。下一次有窗口，再试。</p>
+        </div>
+      </div>
+
+      <p class="case-link-row"><button class="case-link" type="button" data-dialog="case3">舌头表情包：从“清明上河图”到推拉</button></p>
+
+      <h4>另外三个案例</h4>
+      <p class="case-link-row"><button class="case-link" type="button" data-dialog="case4">自拍：把“看”和男朋友身份绑在一起</button><button class="case-link" type="button" data-dialog="case5">接客户：不秒回，忙完再补</button><button class="case-link" type="button" data-dialog="case6">翠茹：不反驳她的价值观</button></p>
+
+      <div class="callout quote">
+        <div class="callout-title"><span class="ico">“</span>课程想要的能力</div>
+        <p>课程想要的能力，是能把她的情绪带起来，像坐过山车一样有起伏，甚至让她主动用亲昵的称呼叫你。前提是两个人都觉得好玩、安全；单方面的性暗示不算，把对方逼到墙角更不算。情绪上的回应，得先有尊重。</p>
+      </div>
+
+      <div class="callout warn">
+        <div class="callout-title"><span class="ico">!</span>她情绪高涨，不等于她准备好发生什么</div>
+        <p>课程里有一个很重要的刹车：女生主动说出很暗示性的话题，男生忍住了。因为他知道，女生这个时候情绪高涨，只是因为觉得他有趣，并不是真的想要跟他干嘛。</p>
+        <p><b>暧昧得是两个人都愿意。</b>对方说“不”“别”“不舒服”，或者明显换话题、只回表情包，就停下。别拿“她先撩的”“她没拒绝”当理由。让她觉得安全，比让她觉得刺激重要。</p>
+      </div>
+
+      
+    </div>
+
+    <!-- ==================== 第五步 ==================== -->
+    <div class="step-block" id="step5">
+      <div class="step-title">
+        <div class="step-num">05</div>
+        <div>
+          <h3>感情升温</h3>
+          <p>目的：通过聊天和女生基本达成共识，让聊天变成情侣间的对话，最后走向线下与确定关系。</p>
+        </div>
+      </div>
+
+      <div class="step-meta">
+        <div class="meta"><b>聊天</b><span>从“我”变成“我们”；加入生活、兴趣、轻调情。</span></div>
+        <div class="meta"><b>约会</b><span>具体安排、有主见、能转场、尊重边界。</span></div>
+        <div class="meta"><b>危机</b><span>不猛攻、不逼问；适当冷处理，但别冷暴力。</span></div>
+      </div>
+
+      <h4>升温的六个信号</h4>
+      <div class="grid-3">
+        <div class="card soft"><b>她主动分享</b><p class="small">日常、情绪、家里的事，不用你问也会说。</p></div>
+        <div class="card soft"><b>她主动问你</b><p class="small">问你在干嘛、吃没吃、周末怎么过。</p></div>
+        <div class="card soft"><b>她接受单独邀约</b><p class="small">愿意跟你两个人见面，而不是总带闺蜜。</p></div>
+        <div class="card soft"><b>她不排斥轻暧昧</b><p class="small">你开玩笑，她会接，甚至会反撩。</p></div>
+        <div class="card soft"><b>她会关心你</b><p class="small">提醒你吃饭、休息，记得你说过的小事。</p></div>
+        <div class="card soft"><b>她给你“特权”</b><p class="small">昵称、专属表情、只对你说的小秘密。</p></div>
+      </div>
+
+      <h4>别只聊工作和规划</h4>
+      <p>课程里有个很真实的提醒：如果你们是普通同事，聊天全是工作、规划、人生，会非常单调、重复。关系要往上走，必须加入生活和小调情。</p>
+      <div class="grid-2">
+        <div class="card">
+          <h4>话题池</h4>
+          <ul class="clean small">
+            <li>美食、旅游、摄影</li>
+            <li>明星、娱乐八卦</li>
+            <li>宠物、运动、追剧</li>
+            <li>童年、家乡、最近的小确幸</li>
+            <li>未来想过的生活、想去的地方</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h4>“我们”的画面</h4>
+          <ul class="clean small">
+            <li>“下次一起去吃那家火锅，我知道一家藏在巷子里的。”</li>
+            <li>“你负责找展，我负责找咖啡店，怎么样？”</li>
+            <li>“感觉你小时候应该是那种会带着一帮小孩到处跑的人。”</li>
+            <li>“以后养猫的话，你负责铲屎，我负责拍照。”</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>怎么邀约</h4>
+      <div class="compare">
+        <div class="panel bad">
+          <span class="panel-label bad">低效邀约</span>
+          <p class="small">“周末有空吗？”“你想去哪？”“吃什么都可以。”</p>
+          <p class="why">把决策压力全丢给她，还显得你没安排。她要么说“再看吧”，要么真的变成你问她答。</p>
+        </div>
+        <div class="panel good">
+          <span class="panel-label good">有效邀约</span>
+          <p class="small">“周六下午两点，XX 展，逛完旁边有家咖啡不错；你更方便周六还是周日？”</p>
+          <p class="why">时间、地点、内容都有，给她两个选项而不是开放题。她有拒绝的空间，你也有主见。</p>
+        </div>
+      </div>
+
+      <div class="callout info">
+        <div class="callout-title"><span class="ico">例</span>约会中的六个细节</div>
+        <div class="grid-3" style="margin-top:8px">
+          <div><b>形象</b><p class="small">干净、合身、场景匹配；比穿得多贵更重要。</p></div>
+          <div><b>展示价值</b><p class="small">用故事和行为让她看见，不要背简历。</p></div>
+          <div><b>引导话题</b><p class="small">准备三个话题篮：她的兴趣、你的生活、共同的未来。</p></div>
+          <div><b>适当做主</b><p class="small">适当做主，是说有主见地做决定，不是控制。可以霸道一点，但别变成控制。“我来安排，你不喜欢我们再换。”</p></div>
+          <div><b>临危不乱</b><p class="small">她问刁钻问题，先停两秒，接情绪，再回答；不要慌。</p></div>
+          <div><b>边界</b><p class="small">肢体升级必须慢、可撤退、有明确同意；不用“没推开”代替同意。</p></div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-title"><span class="ico">+</span>补充：什么是“误解法则”？</div>
+        <p>把她的普通一句话，故意往暧昧/玩笑的方向接一下，再看她什么反应。她接，就继续；不接，就收回来。比如她说“今天好累”，你可以笑：“你是想让我说‘那我养你’吗？”这是玩笑，不是曲解她的正经话。</p>
+        <p><b>万能公式（仅限暧昧语境）：</b>“我想用余生慢慢告诉你答案～”——用来化解不会回答的暧昧问题；涉及原则、承诺、婚育等严肃问题，请诚实回答。</p>
+        <p class="small muted">边界：不要拿她的拒绝、创伤、家庭、身体开玩笑；不要用“我误解了”掩盖性暗示。误解法则只适合双方已经有轻松氛围的时候。</p>
+      </div>
+
+      <h4>冷处理</h4>
+      <p>课程用“猫绳理论”解释：你越是有意无意地挠猫咪一下，它反而越想跟你打闹；你越是讨好，把好吃的好玩的都放在它面前，它反而对你不理不睬。感情里也一样：你发起猛烈进攻，只会让女生产生防御心理；适当拉开一点距离，她反而会按捺不住，主动来找你。</p>
+      <div class="grid-2">
+        <div class="card good">
+          <h4>✅ 健康的冷处理</h4>
+          <ul class="clean small">
+            <li>关系已有基础，只是最近你太急、她有点退。</li>
+            <li>降低主动频率，但保持礼貌和稳定。</li>
+            <li>她主动时，正常回应，不阴阳怪气。</li>
+            <li>冷完之后有“后招”：分享真实压力、约一次轻松见面。</li>
+          </ul>
+        </div>
+        <div class="card warm">
+          <h4>❌ 冷暴力/套路</h4>
+          <ul class="clean small">
+            <li>刚认识就玩消失，指望她追你。</li>
+            <li>用冷处理惩罚她、逼她妥协。</li>
+            <li>她主动了，你继续端着、故意不回。</li>
+            <li>冷完没有解释，也没有下一步。</li>
+          </ul>
+        </div>
+      </div>
+      <p class="small muted">课程里还有一个“后招”：展示脆弱面，引发女生的关心。比如分享你最近真实的压力、困惑，但不要卖惨、不要情绪勒索。脆弱是信任，不是武器。</p>
+
+      <h4>确定关系</h4>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="when">之前</span>
+          <b>先让关系像情侣</b>
+          <p>一起吃饭、看电影、散步，有单独相处，有轻暧昧，有“我们”的话题。不要靠一次表白去“搏一个结果”。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">当下</span>
+          <b>在情绪高点，轻轻确认</b>
+          <p>“我发现我越来越想跟你一起过周末了。”“我想认真跟你往下走，你呢？”——具体、真诚，不逼问。</p>
+        </div>
+        <div class="timeline-item">
+          <span class="when">之后</span>
+          <b>给她时间，也给自己底线</b>
+          <p>她犹豫，可以给时间；但不要无限拖、不要反复逼问。明确表达你的意图，也尊重她的选择。</p>
+        </div>
+      </div>
+
+      <div class="callout quote">
+        <div class="callout-title"><span class="ico">“</span>课程里最关键的一次“临门一脚”</div>
+        <p>“这个球你踢好了，皆大欢喜；你踢不好，那跟这个女孩子好不容易建立起来的感情基础，就会瞬间归零。所以，确定关系之前，一定要铺垫好，不要急于求成，不要太着急去暴露需求。”</p>
+      </div>
+
+      <p class="case-link-row"><button class="case-link" type="button" data-dialog="case7">师兄：她说“我好好考虑一下”</button></p>
+
+      
+    </div>
+
+    <div class="callout">
+      <div class="callout-title"><span class="ico">✓</span>五步法不是考试</div>
+      <p>真实聊天里，五步会来回跳：破冰时可能夹一点人设，暧昧时也要继续挖需求，升温时还要补破冰。别拿表格去审问关系。用它提醒自己：<b>现在这个温度，下一步做什么合适？</b></p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       第三部分：关键词接话
+       ============================================================ -->
+  <section class="section" id="keywords">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">03</span>高情商接话</div>
+      <h2>接话时，先抓关键词</h2>
+      <p class="lead">很多兄弟跟女生、跟客户、跟领导聊天，都会碰到一个难题：好不容易开启一个话题，对方能接，但接完之后你就不知道该怎么继续了。聊着聊着，就被自己聊死了。你以为是自己不会聊？确实，有时候女生就是被一句话聊死的。</p>
+    </div>
+
+    <p>课程给的方法很简单：<b>关键词抓取 + 延展。</b>简单来说，就是从对方说的话里，快速识别出核心信息，然后围绕这个核心信息进行话题扩散。听起来简单，但大多数兄弟都做错了。</p>
+
+    <div class="callout quote">
+      <div class="callout-title"><span class="ico">“</span>心理原理：人们天生喜欢被理解和被关注</div>
+      <p>当你精准抓取到对方话语中的关键信息，并且主动延展，你其实是在向对方发送一个强烈的信号：<b>我在认真听你说话，我对你感兴趣，我尊重你。</b>这会瞬间激活对方的表达欲，让她更愿意跟你深入交流。</p>
+      <p>关键词抓取，是训练你的注意力与集中能力；延展话题，是训练你的联想思维。这两个能力叠加，就会形成强大的接话系统。你不需要再绞尽脑汁想话题，因为<b>话题就在对方的话里</b>。</p>
+    </div>
+
+    <h3>四类关键词</h3>
+    <div class="grid-4">
+      <div class="card soft">
+        <span class="pill">01</span>
+        <h4 style="margin-top:8px">名词</h4>
+        <p class="small">具体事物： “猫咪”“漫画”“成都火锅”。</p>
+      </div>
+      <div class="card soft">
+        <span class="pill">02</span>
+        <h4 style="margin-top:8px">动词 / 活动</h4>
+        <p class="small">正在做或想做的事：“刚健身完”“好想旅行”。</p>
+      </div>
+      <div class="card soft">
+        <span class="pill">03</span>
+        <h4 style="margin-top:8px">形容词 / 感受</h4>
+        <p class="small">表达情绪的词：“累死了”“超开心”“有点纠结”。</p>
+      </div>
+      <div class="card soft">
+        <span class="pill">04</span>
+        <h4 style="margin-top:8px">副词 / 程度</h4>
+        <p class="small">加强语气：“超级”“完全”“从来”。</p>
+      </div>
+    </div>
+
+    <h3>怎么抓关键词</h3>
+    <p>不要只听表面信息，要捕捉对方<b>主动提及、带有情绪、重复出现、细节具体</b>的词。这些是她感兴趣、或者想表达给你的信号。</p>
+    <div class="callout info">
+      <div class="callout-title"><span class="ico">✓</span>操作技巧</div>
+      <p>在对方说完后，先不要着急回复。先保持冷静，深呼吸几次，然后在脑海里快速把句子简化，找出核心词。你不需要抓住所有词，只选<b>一个</b>最有情绪、最有细节、或者你最擅长的点切入。</p>
+    </div>
+
+    <div class="sentence">
+      今天<span class="kw">加班</span>到好晚，感觉快<span class="kw green">累瘫</span>了，回去连我家<span class="kw blue">猫</span>都等睡着了。
+    </div>
+    <div class="kw-map">
+      <div class="kw-branch"><b>加班 · 事件</b>可以适当安慰，但别只讲道理。</div>
+      <div class="kw-branch"><b>累瘫 · 感受</b>可以共鸣，先接住情绪。</div>
+      <div class="kw-branch"><b>猫 · 兴趣点</b>可以延展故事，让她多说。</div>
+    </div>
+
+    <div class="compare">
+      <div class="panel bad">
+        <span class="panel-label bad">❌ 直男终结</span>
+        <div class="mini-chat">
+          <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">今天加班到好晚，感觉快累瘫了，回去连我家猫都等睡着了</div></div>
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble error">辛苦了，赶紧回去洗洗睡觉吧</div></div>
+        </div>
+        <p class="why">看似关心，其实是结束话题：她没法接，也不想再接。你等于把门关上了。</p>
+      </div>
+      <div class="panel good">
+        <span class="panel-label good">✅ 正确：选一个点延展</span>
+        <div class="mini-chat">
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">牛马真不容易呀，我特别累的时候，会放着音乐然后躺着放空，莫名解压，你嘞，有没有不一样的解压方式可以借我参谋参谋</div></div>
+        </div>
+        <p class="why">抓“累瘫”：共鸣 + 自曝 + 反问。她可以分享自己的解压方式，话题自然延续。</p>
+      </div>
+    </div>
+
+    <div class="card blue">
+      <span class="pill blue">同一句话，换“猫”切入</span>
+      <div class="mini-chat" style="margin-top:9px">
+        <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">我都能想象那个画面：你轻轻开门，看到一团毛茸茸在门口睡成“猫饼”，瞬间又心疼又好笑，你平时会不会抓拍它可爱调皮的瞬间嘞</div></div>
+      </div>
+      <p class="small" style="margin-top:9px">抓“猫”：画面感 + 宠物日常 + 提问。她会发照片、讲猫的趣事，话题就有了。</p>
+    </div>
+
+    <h3>六种延展方式</h3>
+
+    <!-- 方法 1 -->
+    <div class="step-block">
+      <div class="step-title">
+        <div class="step-num">01</div>
+        <div>
+          <h3>感受和形容词</h3>
+          <p>她表达情绪时，最想要的不是建议，是“你懂我”。</p>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h4>场景</h4>
+          <p class="small">“最近工作好烦心啊，感觉身心俱疲。”</p>
+        </div>
+        <div class="card">
+          <h4>关键词</h4>
+          <p class="small"><span class="kw">烦心</span>、<span class="kw green">身心俱疲</span>——情绪词，先接情绪。</p>
+        </div>
+      </div>
+
+      <div class="compare">
+        <div class="panel bad">
+          <span class="panel-label bad">❌ 把路堵死</span>
+          <div class="mini-chat">
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">最近工作好烦心啊，感觉身心俱疲</div></div>
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble error">大家都一样，我也累</div></div>
+          </div>
+          <p class="why">她本来想在你这里找点安慰，你一句话把她堵回去了。这不是共鸣，是比惨。</p>
+        </div>
+        <div class="panel good">
+          <span class="panel-label good">✅ 共鸣 + 打开细节</span>
+          <div class="mini-chat">
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">换做是谁都顶不住呀，听起来是遇到棘手的事了，是项目本身难，还是和人协作有关呢？没准我能给你一些建议呢</div></div>
+          </div>
+          <p class="why">先共情（换做谁都顶不住），再给两个具体方向（项目本身/协作），最后轻轻提供帮助，不逼她说。</p>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <span class="pill blue">进阶：关联自己 + 提供分享机会</span>
+        <div class="mini-chat" style="margin-top:9px">
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">我上个月也有段类似时期，喘不过气。这时候我就会开着车放着音乐去兜风，你一般烦心的时候，会做什么让自己放松一下呢？</div></div>
+        </div>
+        <p class="small" style="margin-top:9px">先说一点自己的事，让她放松；再把话头递给她。别一上来就教她，聊成“我们”就行。</p>
+      </div>
+
+      <p class="small muted">公式：<b>共情</b>（换做谁都顶不住/听起来真不容易）→ <b>具体化</b>（项目难/协作难）→ <b>自曝</b>（我也经历过）→ <b>反问</b>（你一般怎么做）。</p>
+    </div>
+
+    <!-- 方法 2 -->
+    <div class="step-block">
+      <div class="step-title">
+        <div class="step-num">02</div>
+        <div>
+          <h3>具体名词</h3>
+          <p>她分享一件开心的事，先接住喜悦，再让她多讲一点。</p>
+        </div>
+      </div>
+      <div class="card">
+        <h4>场景</h4>
+        <p class="small">“我刚养了只布偶猫，好可爱哈哈哈。”</p>
+      </div>
+
+      <div class="compare">
+        <div class="panel bad">
+          <span class="panel-label bad">❌ 一句话让她无语</span>
+          <div class="mini-chat">
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">我刚养了只布偶猫，好可爱哈哈哈</div></div>
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble error">猫是可爱，感觉你们女生都喜欢猫，我们男生就不喜欢猫，喜欢狗</div></div>
+          </div>
+          <p class="why">她分享的是“我的猫”，你把它变成了“男女对立”。话题被带偏，她的喜悦也被浇灭。</p>
+        </div>
+        <div class="panel good">
+          <span class="panel-label good">✅ 细节 + 趣味想象</span>
+          <div class="mini-chat">
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">布偶猫！听说性格像小狗一样粘人，你家那位也是个小跟屁虫嘛</div></div>
+          </div>
+          <p class="why">“布偶猫”“粘人”“小跟屁虫”都是具体细节；她在脑补画面，自然愿意接。</p>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <span class="pill blue">进阶：接收喜悦 + 挖掘故事</span>
+        <div class="mini-chat" style="margin-top:9px">
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">看来你是个资深猫奴哈哈哈，是不是早就想养，这次终于遇到“真命天猫”，让你下定决心去伺候猫主子了</div></div>
+        </div>
+        <p class="small" style="margin-top:9px">“资深猫奴”“真命天猫”“伺候猫主子”都是趣味包装；最后落到“是不是早就想养”，挖她的故事。</p>
+      </div>
+    </div>
+
+    <!-- 方法 3 -->
+    <div class="step-block">
+      <div class="step-title">
+        <div class="step-num">03</div>
+        <div>
+          <h3>横向关联</h3>
+          <p>从关键词联想到相关的领域、经历、趣闻或人物，创造“我们有点像”的共鸣。</p>
+        </div>
+      </div>
+      <div class="card">
+        <h4>场景</h4>
+        <p class="small">“我刚去重庆旅游回来，太好玩了。”</p>
+      </div>
+
+      <div class="compare">
+        <div class="panel bad">
+          <span class="panel-label bad">❌ 终结话题</span>
+          <div class="mini-chat">
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">我刚去重庆旅游回来，太好玩了</div></div>
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble error">羡慕啊，真有钱</div></div>
+          </div>
+          <p class="why">“去旅游一趟就有钱了？”——这句话既尴尬又带刺，她只能回“哈哈”或者不回。</p>
+        </div>
+        <div class="panel good">
+          <span class="panel-label good">✅ 关联经历 + 分享趣事 + 打开话题</span>
+          <div class="mini-chat">
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">重庆！我去年去的，为了吃一家藏在防空洞里的火锅，迷路了半小时。你这次美食探索有没有类似“冒险”，快跟我分享分享哈哈</div></div>
+          </div>
+          <p class="why">先接“重庆”，再自曝一个具体、有画面的小糗事，最后用“有没有类似冒险”把话题交还给她。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 方法 4 -->
+    <div class="step-block">
+      <div class="step-title">
+        <div class="step-num">04</div>
+        <div>
+          <h3>往未来聊</h3>
+          <p>从她当下喜欢的事，延伸到“以后我们可以/你可以”，让对话有未来感。</p>
+        </div>
+      </div>
+      <div class="card">
+        <h4>场景</h4>
+        <p class="small">“最近喜欢上了烘焙，一直在研究怎么做。”</p>
+      </div>
+
+      <div class="compare">
+        <div class="panel bad">
+          <span class="panel-label bad">❌ 扫兴</span>
+          <div class="mini-chat">
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">最近喜欢上了烘焙，一直在研究怎么做</div></div>
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble error">你这是闲着没事干，搞那些有的没的</div></div>
+          </div>
+          <p class="why">她分享的是热爱，你回的是否定。她不会想再跟你说第二句。</p>
+        </div>
+        <div class="panel good">
+          <span class="panel-label good">✅ 肯定 + 未来想象</span>
+          <div class="mini-chat">
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">不错哦！没想到你这么多才多艺哈哈，看来下次朋友聚会，甜品担当就是你了，你最想挑战哪个“殿堂级”甜品呢，我都迫不及待想尝尝了</div></div>
+          </div>
+          <p class="why">先肯定，再给她一个“甜品担当”的身份，最后用“最想挑战哪个”把话题推向未来。</p>
+        </div>
+      </div>
+
+      <div class="card blue">
+        <span class="pill blue">进阶：激发趣味联想</span>
+        <div class="mini-chat" style="margin-top:9px">
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">哈哈哈好厉害！如果开一家你自己的梦幻甜品店，第一款招牌会是什么？</div></div>
+        </div>
+        <p class="small" style="margin-top:9px">把“烘焙”延伸到一个好玩的未来场景，她会开始想象、分享品味，话题自然变深。</p>
+      </div>
+    </div>
+
+    <!-- 方法 5 -->
+    <div class="step-block">
+      <div class="step-title">
+        <div class="step-num">05</div>
+        <div>
+          <h3>聊出画面</h3>
+          <p>把话题引申到具体的、可感知的场景中，让对话更生动、更亲近。</p>
+        </div>
+      </div>
+      <div class="card">
+        <h4>场景</h4>
+        <p class="small">“我在听周杰伦的老歌，还是以前的歌好听有感觉。”</p>
+      </div>
+
+      <div class="compare">
+        <div class="panel bad">
+          <span class="panel-label bad">❌ 终结话题</span>
+          <div class="mini-chat">
+            <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">我在听周杰伦的老歌，还是以前的歌好听有感觉</div></div>
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble error">我也是 / 嗯</div></div>
+          </div>
+          <p class="why">“我也是”不是接话，是句号。她没有继续说的动力。</p>
+        </div>
+        <div class="panel good">
+          <span class="panel-label good">✅ 共同画面 + 引导分享</span>
+          <div class="mini-chat">
+            <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">七里香的前奏一响，我就感觉回到夏天的操场，那你嘞，你有没有一首歌，一听到就会瞬间被拉回某个场景？</div></div>
+          </div>
+          <p class="why">用“前奏/夏天操场”造出具体画面，再把问题抛给她。她会被带回自己的记忆，话就多了。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 方法 6 -->
+    <div class="step-block">
+      <div class="step-title">
+        <div class="step-num">06</div>
+        <div>
+          <h3>组合使用</h3>
+          <p>真实聊天很少只用一招，通常是两三个动作连着来。</p>
+        </div>
+      </div>
+      <div class="card">
+        <h4>场景</h4>
+        <p class="small">“周末跟闺蜜去露营了，虽然虫子很多但星空超美。”</p>
+        <p class="small"><b>关键词：</b><span class="kw">露营</span>、<span class="kw green">闺蜜</span>、<span class="kw purple">虫子</span>、<span class="kw blue">星空</span>。</p>
+      </div>
+
+      <div class="card soft">
+        <div class="mini-chat">
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">露营呀，我一直想试但怕喂蚊子（关联自己 + 感受），你们这是资深露营玩家局，还是闺蜜们的首次“荒野求生”嘛？（幽默定义，挖掘细节）</div></div>
+          <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">对呀哈哈哈</div></div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card blue">
+          <span class="pill blue">选项 A · 深入</span>
+          <p class="small" style="margin-top:8px">“听说夜里看星空的时候特别容易聊人生，你们有没有爆出什么惊天大秘密呢？”</p>
+          <p class="tiny muted">场景植入 + 趣味提问，往情绪和故事走。</p>
+        </div>
+        <div class="card purple">
+          <span class="pill" style="background:var(--purple-soft);color:var(--purple)">选项 B · 未来</span>
+          <p class="small" style="margin-top:8px">“有了这次经验，下次如果再选个更进阶的露营地，你会最想挑战哪里呢？”</p>
+          <p class="tiny muted">面向未来，制造“下次”的画面。</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>几个常见的错</h3>
+    <div class="grid-2">
+      <div class="card">
+        <h4>1. 不要审讯</h4>
+        <p class="small">避免“然后呢？”“还有吗？”的连环问。多用“分享 + 提问”：“我上次也……，你当时是不是也这样？”</p>
+      </div>
+      <div class="card">
+        <h4>2. 不要强行炫技或说教</h4>
+        <p class="small">哪怕你很懂，也要以探讨、好奇的姿态交流。她不是来上课的，是来跟你相处的。</p>
+      </div>
+      <div class="card">
+        <h4>3. 抓住她的情绪线索</h4>
+        <p class="small">如果她提到“累”“烦”，先共情（“听起来真不容易”），再延展。不要忽略情绪，直接跳到下一个话题。</p>
+      </div>
+      <div class="card">
+        <h4>4. 注意话题比例</h4>
+        <p class="small">良性对话是双向的。适时分享自己，但目标是让她愿意多说；不要变成你的个人演讲。</p>
+      </div>
+      <div class="card">
+        <h4>5. 适时结束或切换</h4>
+        <p class="small">如果一个话题明显聊尽了，用“对了，说到这个让我想起……”自然切换到另一个由关键词关联的新话题。</p>
+      </div>
+      <div class="card soft">
+        <h4>额外提醒：不要“为了接话而接话”</h4>
+        <p class="small">她说“累了想睡”，你就说“早点休息，明天聊”；不需要硬拽一个话题。懂得收尾，也是高情商。</p>
+      </div>
+    </div>
+
+    <h3>为什么总是找不到话题</h3>
+    <div class="callout warn">
+      <div class="callout-title"><span class="ico">!</span>课程里的扎心话</div>
+      <p>“为什么你们经常找不到话题去聊？就算找到了话题，每次聊几句就结束了，有什么意义呢？给你一千个一万个话题，总有一天会聊完。”</p>
+      <p>“女生为什么不主动给你分享？就是因为没有吸引力，女生对你不感兴趣，她有其他比你高情商的男生在聊。”</p>
+    </div>
+    <p>这话不好听，但方向是对的：<b>话题不是存起来的，是当场长出来的。</b>你要练的是：她说完一句，你能抓住一个词，接住一点情绪，再给她一个愿意继续的入口。</p>
+    <p>如果她长期不主动、不回、不分享，先不要质问“你为什么这样”。把精力放回自己身上：形象、生活、聊天能力、分寸。吸引力不是求来的。</p>
+
+    <details class="fold">
+      <summary>7 天接话训练法（每天 10 分钟）</summary>
+      <div class="fold-body">
+        <div class="timeline">
+          <div class="timeline-item"><span class="when">Day 1</span><b>找关键词</b><p>翻 5 段聊天/朋友圈/对话，每段划出 2 个名词、1 个感受词、1 个程度词。</p></div>
+          <div class="timeline-item"><span class="when">Day 2</span><b>一词三延展</b><p>选 3 个关键词，每个写 3 种延展：感受、经历、未来。</p></div>
+          <div class="timeline-item"><span class="when">Day 3</span><b>共情练习</b><p>别人说“累/烦/开心”，先回一句共情，不急着给建议。</p></div>
+          <div class="timeline-item"><span class="when">Day 4</span><b>自曝练习</b><p>每次接话，加一句自己的相关经历，但不超过两句，避免抢戏。</p></div>
+          <div class="timeline-item"><span class="when">Day 5</span><b>反问练习</b><p>把“陈述句”改成“陈述 + 轻问”，把话题交还对方。</p></div>
+          <div class="timeline-item"><span class="when">Day 6</span><b>回头看一次聊死的天</b><p>写下：她说了什么/我回了什么/她为什么不接/下次怎么回。</p></div>
+          <div class="timeline-item"><span class="when">Day 7</span><b>实战 15 分钟</b><p>找一个朋友/同事/家人，聊 15 分钟，目标：不冷场、不审讯、让对方多说。</p></div>
+        </div>
+      </div>
+    </details>
+
+    
+
+    <details class="fold">
+      <summary>附：话题联想地图（来自课程导图）——不知道聊什么时，从这里挑一个分支</summary>
+      <div class="fold-body">
+        <p class="small">不要一次问完。选一个分支，结合她刚才的话，用“分享 + 提问”展开；她接哪个，就往哪个方向走。</p>
+        <div class="grid-2">
+          <div class="card soft">
+            <h4>明星</h4>
+            <ul class="clean small">
+              <li>比赛 → 球星</li>
+              <li>电影 → 演员</li>
+              <li>歌曲 → 歌手</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h4>我和你</h4>
+            <ul class="clean small">
+              <li>我 → 今天的事</li>
+              <li>我的朋友 → 怎么样</li>
+              <li>你 → 今天的事</li>
+              <li>你的朋友 → 怎么样</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h4>好天气</h4>
+            <p class="small"><b>室内：</b>电影、看书、做美食、做家务。</p>
+            <p class="small"><b>室外：</b>旅游、爬山、高尔夫、遛狗。</p>
+          </div>
+          <div class="card soft">
+            <h4>坏天气</h4>
+            <p class="small"><b>家：</b>午睡、看电影、看书、做美食。</p>
+            <p class="small"><b>室内活动：</b>咖啡厅、健身房、电影院。</p>
+          </div>
+          <div class="card soft">
+            <h4>家 / 画室</h4>
+            <p class="small"><b>家：</b>看书、做美食、看电视、喝红酒、画画。</p>
+            <p class="small"><b>画室：</b>开画展、教别人画画。</p>
+          </div>
+          <div class="card soft">
+            <h4>美食店 / 国外</h4>
+            <p class="small"><b>美食店：</b>服务、美味、经常来、环境。</p>
+            <p class="small"><b>国外：</b>美国怎么样、日本怎么样、巴黎怎么样。</p>
+          </div>
+        </div>
+        <p class="tiny muted" style="margin-top:10px">用法示例：她说“今天下雨好烦”，你抓“坏天气 → 家 → 做美食”，可以接：“下雨天最适合窝在家里煮点热的。你下雨天会想吃什么？”——不是查户口，是给她一个舒服的入口。</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- ============================================================
+       第四部分：避坑指南
+       ============================================================ -->
+  <section class="section" id="pitfalls">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">04</span>沟通避坑</div>
+      <h2>几个容易把天聊死的习惯</h2>
+      <p class="lead">这些习惯比“话术不够”更容易把天聊死。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card warm">
+        <h4>❌ 审讯式聊天</h4>
+        <p class="small">“然后呢？”“还有吗？”“你多大？做什么的？住哪？”——像面试，不像聊天。</p>
+        <p class="small"><b>替换：</b>“我上次也遇到类似的事……你当时是不是也这样？”用分享换分享。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 强行炫技/说教</h4>
+        <p class="small">她分享生活，你开始上课；她说什么，你都要纠正、证明自己更懂。</p>
+        <p class="small"><b>替换：</b>“这个我不太懂，你展开说说？”把舞台给她，你负责好奇。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 忽略情绪，直接讲道理</h4>
+        <p class="small">她说“累死了”，你回“谁不累”；她说“好烦”，你回“你应该这样做”。</p>
+        <p class="small"><b>替换：</b>“听起来真不容易，是发生什么了？”先接情绪，再谈解决。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 话题比例失衡</h4>
+        <p class="small">要么你一个人演讲，要么你只当听众、从不分享。两种都很难建立连接。</p>
+        <p class="small"><b>替换：</b>她讲 70%，你讲 30%；每次分享自己，都留一个钩子给她。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 话题聊尽了还硬撑</h4>
+        <p class="small">明明已经“哈哈”结束，还继续问“然后呢”，气氛越来越干。</p>
+        <p class="small"><b>替换：</b>“对了，说到这个让我想起……”自然切换；或者“你先忙，晚点聊”，留个好收尾。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 秒回 + 连环轰炸</h4>
+        <p class="small">她没回，你连发五条；她回一句，你秒回三句。需求感写在了屏幕上。</p>
+        <p class="small"><b>替换：</b>有自己的生活节奏；忙的时候说明“我在开会/开车，晚点回”，不玩消失。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 过度解读表情包</h4>
+        <p class="small">她发个表情包，你就觉得“有戏”；她回“哈哈哈”，你就开始规划婚礼。</p>
+        <p class="small"><b>替换：</b>表情包/哈哈哈 = 反应一般；反问/假设/主动分享 = 反应良好。按温度推进。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 刚聊好就暴露需求</h4>
+        <p class="small">表白、送贵重礼物、查岗、问“你到底喜不喜欢我”。</p>
+        <p class="small"><b>替换：</b>先建立吸引和舒适感；表白是确认，不是用来“逼一个答案”。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 把冷处理变成冷暴力</h4>
+        <p class="small">用消失惩罚她、逼她妥协；她主动了还继续端着。</p>
+        <p class="small"><b>替换：</b>降低频率、保留空间、正常回应；冷完要有“后招”，不是无限晾着。</p>
+      </div>
+      <div class="card warm">
+        <h4>❌ 忽视拒绝</h4>
+        <p class="small">她说“不”“别”“不舒服”，你还觉得“她只是矜持”“再试试”。</p>
+        <p class="small"><b>替换：</b>立即停止，退回到让她舒服的距离。拒绝就是拒绝，不需要你替她解释。</p>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>雷区</th><th>为什么错</th><th>更好的说法/做法</th></tr></thead>
+        <tbody>
+          <tr><td><b>“在干嘛？”</b></td><td>封闭、无情绪、像查岗</td><td>“刚看到一个很像你的表情包，发给你看看。”</td></tr>
+          <tr><td><b>“多喝热水。”</b></td><td>正确的废话，没有安慰</td><td>“听起来挺难受的，你现在最想做什么？我陪你聊会儿。”</td></tr>
+          <tr><td><b>“我早就跟你说过……”</b></td><td>赢了道理，输了她</td><td>“这次确实挺难的，我们一起看看怎么处理。”</td></tr>
+          <tr><td><b>“你是不是不喜欢我？”</b></td><td>逼问、暴露需求、把压力丢给她</td><td>“我挺享受跟你聊天的，你呢？”（轻松确认，不逼供）</td></tr>
+          <tr><td><b>“随便，都行。”**</b></td><td>看似尊重，其实把决策压力全给她</td><td>“我倾向 A，不过 B 也不错；你更想哪个？”</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title"><span class="ico">✓</span>发消息前问自己</div>
+      <p>每次发消息前，问自己三个问题：<b>① 这句话是让她更容易回，还是更难回？② 我是在表达兴趣，还是在索取安全感？③ 如果她已读不回，我会不会焦虑到连发？</b>三个问题里有两个答错，就先别发。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       第五部分：核心思维
+       ============================================================ -->
+  <section class="section" id="mindset">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">05</span>核心思维</div>
+      <h2>几个比技巧更重要的想法</h2>
+      <p class="lead">同样的方法，有人用着真诚，有人用着油腻。差别不在话术，在你怎么想。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <span class="pill">01</span>
+        <h3 style="margin-top:10px">感动和吸引是两回事</h3>
+        <p>父母那个年代，物质匮乏，你给女生送花、送礼物、转账、生活上帮一把，她可能感动得稀里哗啦，死心塌地跟你过一辈子。但那个时代已经过去了。</p>
+        <p>现在的女生，凭借自己的能力也能在社会上生活得很好，甚至比你更精彩。你的思维如果还停留在上个世纪，只知道“对她好、讨好她、关心她”，你提供的价值不是她想要的，她为什么要跟你在一起？</p>
+        <p class="small muted">不是让你对女生差。对她好可以，但得看她对你有没有好感。<b>有，你的好是加分；没有，你的好就是压力</b>，最后变成备胎或好人卡。</p>
+      </div>
+      <div class="card">
+        <span class="pill">02</span>
+        <h3 style="margin-top:10px">不要靠讨好换关系</h3>
+        <p>对她好是有前提的。她对你也有好感，你的关心才叫温柔；她对你没感觉，你的随叫随到只是打扰。课程说女人喜欢能带领她的男人，重点不在“慕强”，在关系得有个方向，而方向来自一个有自己的人。</p>
+        <p class="small muted">“带”不是控制，也不是替她做所有决定。是你敢提方案、能担结果，她犹豫的时候你稳得住，同时她说不，你也听得进去。</p>
+      </div>
+      <div class="card">
+        <span class="pill">03</span>
+        <h3 style="margin-top:10px">恋爱能力是可以练的</h3>
+        <p>当你拥有正确的恋爱能力——价值展示、聊天框架、约会能力——脱单会非常容易。你没有能力，哪怕再喜欢她、再关心她、送再多礼物，也没有用；人家只会把你当备胎、舔狗，给你发好人卡。</p>
+        <p>“感动自己的方式，最终只会让对方远离你。”这句话很扎心，但很真实：你熬夜写小作文、跨城送早餐，感动的是你自己；她感受到的，可能是压力。</p>
+      </div>
+      <div class="card">
+        <span class="pill">04</span>
+        <h3 style="margin-top:10px">先把自己过好</h3>
+        <p>课程说，价值越高越能吸引人。这不是说没钱就不配谈恋爱，是说别把精力全花在话术上。形象、生活、情绪稳定、聊天、约会，这些才长期有用。</p>
+        <p class="small muted">话术是放大器：你有内容，它帮你表达；你没内容，它只会让你显得油。</p>
+      </div>
+      <div class="card">
+        <span class="pill">05</span>
+        <h3 style="margin-top:10px">有自己的判断，但别撒谎</h3>
+        <p>课程说“不要正面回答女生问题”“要有自己的框架”。这两句很容易被学歪。它不是让你撒谎、回避、装酷，是让你先接住她的情绪，再决定说到哪；别被一个刁钻问题带乱节奏。</p>
+        <p class="small muted">如果她问的是收入、婚育、以后怎么打算，请诚实回答。有判断，不等于逃避责任。</p>
+      </div>
+      <div class="card">
+        <span class="pill">06</span>
+        <h3 style="margin-top:10px">带领不是控制</h3>
+        <p>课程提到“女生需要被保护、被带领，要拿出雄性领袖气质”，还提到“团队中最有领导力的人更容易吸引女生”。这里的领导力，是：<b>能决策、能承担、能照顾、遇事不慌。</b></p>
+        <p class="small muted">不是嗓门大，不是控制，也不是“我说了算”。你能让她安心，才是真本事。</p>
+      </div>
+    </div>
+
+    <div class="blockquote">
+      <p>“当你掌握正确的方式去追女孩子的时候，脱单真的非常非常容易。但当你不会恋爱能力，你还是只会像爸妈那个年代，一味地关心女生、送花送礼物、转账发红包、讨好女生——你以为能感动她，但这种方式已经不适合这个时代了。”</p>
+          </div>
+
+    <div class="callout quote">
+      <div class="callout-title"><span class="ico">“</span>关于“选择权”</div>
+      <p>“不要期待用感动自己的方式去和女生相处，最终的结果是感动了自己，对方却远离你。一定要认真，为自己想清楚，你才有真正的选择权，要不然就是被别人选择。”</p>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-title"><span class="ico">!</span>给“核心思维”加一条边界</div>
+      <p>以上都是课程里的经验，不是对所有女人的定论。人和人差很多：有人喜欢被带，有人喜欢商量；有人看重物质，有人更看重情绪。别把一套理论往所有人身上套，先看清你面前这个人。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       第六部分：师兄完整案例复盘
+       ============================================================ -->
+  <section class="section" id="case-study">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">06</span>完整案例</div>
+      <h2>一个 29 岁学员的脱单过程</h2>
+      <p class="lead">这是课程里最完整的一个长案例：一个接近 30 岁、只谈过一次恋爱、面对喜欢的女同事会自卑到说话支支吾吾的男生，如何在约一个月里，从被冷淡对待，走到女生主动依赖。</p>
+    </div>
+
+    
+
+    <h3>人物背景</h3>
+    <div class="grid-3">
+      <div class="card">
+        <h4>他</h4>
+        <p class="small">课程老师的关门弟子；课程里称他为“大龄剩男”。马上奔三，只谈过一段恋爱；长得不是特别帅；面对喜欢的女同事很自卑，说话支支吾吾；不幽默，也不太会聊天。</p>
+      </div>
+      <div class="card">
+        <h4>她</h4>
+        <p class="small">刚进入社会不久，对职场人情世故不太清楚；一边工作一边准备考研/考博；起初对他非常冷淡。</p>
+      </div>
+      <div class="card">
+        <h4>关系</h4>
+        <p class="small">普通同事。她聊的都不是感兴趣的话题，所以回应冷淡；他越喜欢，越不敢自然相处。</p>
+      </div>
+    </div>
+
+    <h3>过程</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="when">转折 1 · 被冷淡</span>
+        <b>“她聊的都不是我感兴趣的话题”</b>
+        <p>师兄起初不知道怎么聊，只会问“吃饭了吗”“下班了吗”“在干嘛”，女生回应冷淡。不是她高冷，是对话没有提供她需要的价值。</p>
+      </div>
+      <div class="timeline-item">
+        <span class="when">转折 2 · 被拒绝</span>
+        <b>“我要忙着考研，暂时没有恋爱的想法”</b>
+        <p>师兄向女生表达恋爱意向、想追她，女生直接说自己要忙着考研，暂时没有恋爱想法。很多人在这一步就退了，或者开始死缠烂打；课程选择先理解她的处境。</p>
+      </div>
+      <div class="timeline-item">
+        <span class="when">转折 3 · 重新提供价值</span>
+        <b>用“过来人”的优势，而不是用“追求者”的姿态</b>
+        <p>课程根据女生的情况编辑了一段话术，让师兄转发给她，扩大她的恋爱需求：她刚进入社会，对职场人情世故不清楚；师兄利用自己职场摸爬滚打多年的经验、领导力、能带领她的价值，去和她接触。话题不只工作，还有生活、职业规划。</p>
+        <p>师兄一下子在女生面前“高大”起来，不再是一个只会问“吃饭没、下班没、在干嘛”的直男。差不多一个星期，从冷淡、爱答不理，到现实中一起吃饭、看电影，女生开始对他产生依赖。关系从普通同事，慢慢往好朋友升温。</p>
+      </div>
+      <div class="timeline-item">
+        <span class="when">转折 4 · 临门一脚的危机</span>
+        <b>操之过急，暴露需求，女生开始犹豫</b>
+        <p>师兄操作不当，有点操之过急：想快点跟她在一起，想快点“得到她”，展示出了比较着急、暴露需求感的方式。女生开始犹豫，觉得进展是不是太快了，需要再考虑考虑。</p>
+        <p>师兄一下子慌了。他之前没有恋爱经验，几乎是个恋爱小白。这个阶段，就是确定关系之前最关键的“临门一脚”：踢好了，皆大欢喜；踢不好，好不容易建立起来的感情基础，瞬间归零。</p>
+      </div>
+      <div class="timeline-item">
+        <span class="when">转折 5 · 冷处理 + 后招</span>
+        <b>“两天不主动联系，我们再主动”</b>
+        <p>课程先让师兄冷一段时间。因为一旦发起强烈猛攻，只会让女生的防御心理越来越重。使用一些小技巧、对她进行冷淡处理之后，女生反而像小猫咪一样，按捺不住内心的活动，主动来找师兄。</p>
+        <p>指导记录里，女生故意找了一个工作上的问题，在晚上十一点主动联系了他。课程的建议是：“不用着急回。”之后再用“展示脆弱面/真实压力”的后招，重新建立连接。差不多一个月，师兄成功追到喜欢的女生。</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title"><span class="ico">✓</span>指导记录里的结尾</div>
+      <p>“表白都是找我要来的。”</p>
+      <p>“在老师的指导下，刻意不暴露需求感。”</p>
+      <p class="small muted">课程拿这个细节说明：吸引有了、节奏稳了，确定关系也可能是她先推的。不是让你玩套路，是别拿表白去要安全感。表白是确认，不是逼供。</p>
+    </div>
+
+    <h3>一段关键对话</h3>
+    <p class="case-link-row"><button class="case-link" type="button" data-dialog="case7">师兄：她说“我好好考虑一下”</button></p>
+
+    <h3>三点经验</h3>
+    <div class="grid-3">
+      <div class="card soft">
+        <h4>① 先判断，再推进</h4>
+        <p class="small">她的“忙/考研”可能是真忙，也可能是“现在不想跟你往那走”。先理解她的处境，再决定是提供价值、保持距离，还是停止。</p>
+      </div>
+      <div class="card soft">
+        <h4>② 用优势提供价值，不用讨好换好感</h4>
+        <p class="small">师兄的优势是职场经验、领导力、阅历；他可以用这些帮她看清职场、做职业规划，而不是送礼物、随叫随到。</p>
+      </div>
+      <div class="card soft">
+        <h4>③ 临门一脚，最忌暴露需求</h4>
+        <p class="small">关系越接近确定，越要稳。不要逼问、不要表白轰炸、不要用“我对你这么好”施压；给时间，也给自己底线。</p>
+      </div>
+    </div>
+
+    <div class="callout danger">
+      <div class="callout-title"><span class="ico">!</span>不要误读这个案例</div>
+      <p>“冷处理”有效，前提是关系已经有基础、对方只是被推进速度吓到；如果对方已经明确拒绝、拉黑、回避，你再“冷处理+后招”，就是骚扰。案例是路标，不是许可证。</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       第七部分：7 天训练与自查
+       ============================================================ -->
+  <section class="section" id="training">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">07</span>练习</div>
+      <h2>七天练习</h2>
+      <p class="lead">7 天，每天练一个动作；第 8 天回头看看，再定下一个 7 天。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>Day 1 · 价值盘点</h4>
+        <p class="small">写下你的硬价值/软价值各 5 条；圈出 1 个“30 天能明显改善”的点（形象、聊天、约会、社交直觉）。</p>
+      </div>
+      <div class="card">
+        <h4>Day 2 · 形象最小改动</h4>
+        <p class="small">理发、修眉、换一件合身的上衣、把鞋子擦干净。拍一张正面照，看看“干净、有精神”有没有做到。</p>
+      </div>
+      <div class="card">
+        <h4>Day 3 · 破冰练习</h4>
+        <p class="small">在安全的社交场景里，用“观察 + 轻提问”开启一次 3 分钟对话；不查户口，不背梗。</p>
+      </div>
+      <div class="card">
+        <h4>Day 4 · 关键词接话</h4>
+        <p class="small">找 3 段对话，每段抓 2 个关键词，写 2 种延展；实战时只用一个，别贪多。</p>
+      </div>
+      <div class="card">
+        <h4>Day 5 · 共情练习</h4>
+        <p class="small">别人说“累/烦/开心”，先回一句共情，再问一个细节；不急着给建议、不讲大道理。</p>
+      </div>
+      <div class="card">
+        <h4>Day 6 · 邀约设计</h4>
+        <p class="small">设计一个“时间 + 地点 + 两个选项”的邀约；找一个你自己想去的地方，不要为了约会而约会。</p>
+      </div>
+      <div class="card">
+        <h4>Day 7 · 回顾</h4>
+        <p class="small">选一次成功、一次失败，各写 100 字：她说了什么/我回了什么/她的反应/下次怎么改。只改一个点。</p>
+      </div>
+      <div class="card soft">
+        <h4>第 8 天 · 只保留一个目标</h4>
+        <p class="small">从 7 天里选一个“最有效/最舒服”的动作，接下来 3 周重复它。不要同时练五个技巧。</p>
+      </div>
+    </div>
+
+    <h3>聊天回顾模板</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>项目</th><th>写下你的答案</th></tr></thead>
+        <tbody>
+          <tr><td><b>情境</b></td><td>什么时候、什么关系阶段、她当时的状态？</td></tr>
+          <tr><td><b>她说的关键词</b></td><td>名词/动词/感受/程度词各是什么？</td></tr>
+          <tr><td><b>我的回应</b></td><td>我是共情了、延展了，还是讲道理/查户口/终结话题？</td></tr>
+          <tr><td><b>她的反应</b></td><td>表情包/哈哈哈/反问/假设/主动分享/不回复？</td></tr>
+          <tr><td><b>更好的选项</b></td><td>如果重来一次，我会怎么接？写具体一句话。</td></tr>
+          <tr><td><b>下次只改</b></td><td>一个动作：先共情/少问一句/多分享一句/及时收尾。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>几句话术，别死背</h3>
+    <div class="grid-2">
+      <div class="card soft">
+        <h4>破冰</h4>
+        <ul class="clean small">
+          <li>“这个表情和今天的天气很配，没有任何感情。”</li>
+          <li>“这样就是有备注的人了，不一般了。”</li>
+          <li>“已备注，莫辜负。”</li>
+        </ul>
+      </div>
+      <div class="card soft">
+        <h4>轻测试</h4>
+        <ul class="clean small">
+          <li>“抱成一团就没事了。”</li>
+          <li>“出双入对的那种。”</li>
+          <li>“带你上街会不会像牵个妹妹出门一样？”</li>
+        </ul>
+      </div>
+      <div class="card soft">
+        <h4>暧昧</h4>
+        <ul class="clean small">
+          <li>“会画清明上河图吗？”</li>
+          <li>“没关系，下次我教你。”</li>
+          <li>“你不行，吃不消的。”</li>
+        </ul>
+      </div>
+      <div class="card soft">
+        <h4>接话</h4>
+        <ul class="clean small">
+          <li>“听起来真不容易，是发生什么了？”</li>
+          <li>“换做是谁都顶不住呀。”</li>
+          <li>“对了，说到这个让我想起……”</li>
+        </ul>
+      </div>
+    </div>
+    
+
+    <h3>对照清单</h3>
+    <ul class="checklist">
+      <li>我知道自己目前的关系处在哪个阶段，而不是“聊了多久”。</li>
+      <li>我能说出她最近最在意的 1—2 件事，而不是只知道她的名字。</li>
+      <li>我最近一次聊天，是先共情，再给建议。</li>
+      <li>我没有用“然后呢/还有吗”连环追问。</li>
+      <li>我能从她的话里抓住至少一个关键词，并延展 2—3 句。</li>
+      <li>我邀约时给了具体时间、地点和两个选项。</li>
+      <li>她拒绝/犹豫时，我停止了推进，而不是加码。</li>
+      <li>我没有用冷暴力惩罚她，也没有用“测试”设套。</li>
+      <li>我有自己的生活：工作/学习、运动、朋友、爱好。</li>
+      <li>我提升自己，是因为我想成为更好的人，不只是为了脱单。</li>
+    </ul>
+  </section>
+
+  <!-- ============================================================
+       第八部分：边界与尊重
+       ============================================================ -->
+  <section class="section" id="ethics">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">08</span>边界与尊重</div>
+      <h2>几条边界</h2>
+      <p class="lead">技巧不能用来操控、施压、欺骗。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>1. 同意是明确、持续、可撤回的</h4>
+        <p class="small">亲密接触前，确认对方真的愿意；过程中，她随时可以改变主意。“没推开”“没说不”不等于同意；喝酒、情绪崩溃、权力不对等时，尤其要谨慎。</p>
+      </div>
+      <div class="card">
+        <h4>2. 拒绝就是拒绝</h4>
+        <p class="small">她说“不”“别”“不想”“不舒服”，立即停止。不要替她解释成“矜持”“欲擒故纵”。不回复、拉黑、回避，也是拒绝。</p>
+      </div>
+      <div class="card">
+        <h4>3. 不欺骗、不虚构</h4>
+        <p class="small">不虚构身份、收入、学历、感情经历，不隐瞒婚姻/恋爱状态。人设可以是“更好地展示真实的你”，不能是“编一个不存在的人”。</p>
+      </div>
+      <div class="card">
+        <h4>4. 不传播隐私</h4>
+        <p class="small">不截图、不转发对方的照片、聊天记录、身体信息。</p>
+      </div>
+      <div class="card">
+        <h4>5. 不物化、不贬低</h4>
+        <p class="small">不拿“胸大不大/屁股翘不翘/能不能生”评价一个人；不把“女人都……”挂在嘴边。课程里的群体概括，是为了讲清楚偏好，不是给你贴标签的许可证。</p>
+      </div>
+      <div class="card">
+        <h4>6. 不把恋爱当唯一价值</h4>
+        <p class="small">脱单不是人生 KPI。你有工作、朋友、爱好、目标；恋爱是生活的一部分，不是全部。长期焦虑、自我否定，必要时寻求专业心理帮助。</p>
+      </div>
+    </div>
+
+    
+  </section>
+
+</main>
+
+<!-- ============================================================
+     聊天案例弹窗：逐条还原截图，缺失处明确标注，不虚构
+     ============================================================ -->
+<dialog class="chat-dialog" id="case1" aria-labelledby="case1-title">
+  <div class="chat-shell">
+    <div class="chat-head">
+      <div class="chat-person">
+        <span class="ca">张</span>
+        <div><strong id="case1-title">张思琪</strong></div>
+      </div>
+      <button class="chat-close" type="button" data-close-dialog aria-label="关闭案例">✕</button>
+    </div>
+    <div class="chat-body">
+      
+      <div class="chat-date">通过好友 · 破冰</div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">果然是个可爱类型的逗比</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">表情包出卖了你</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[害羞小狗表情包]</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">我叫张思琪</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">你呢</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">你叫我啊胜就好了</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">这样就是有备注的人了，不一般了</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">已备注 莫辜负</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">啊哟</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">嘴巴真会说话</div></div>
+      <div class="chat-date">之后 · 日常关心与第一次测试</div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">每天都是忙到这个点吃饭</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">胃都受不了 😊</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble voice"><span class="wave">▮▮▮</span> 5″ 语音</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">总是不按时吃饭，时间久了肯定会受不了的。</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">主要工作一忙起来就会忘记</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble voice"><span class="wave">▮▮▮</span> 4″ 语音</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">你吃那么少，太瘦了。</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">是啊，女生都不喜欢太瘦的</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">多吃点</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">要不然一阵风就吹走了</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">你把我扯住就好了</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">我也瘦 🤣🤣</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">哈哈哈哈</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">抱成一团就没事了</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">太瘦了</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">还是多吃点吧</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">要一起增肥吗，有好吃的带上你</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">可以啊</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[跳舞小狗表情包]</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">出双入对的那种 😋</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[“你要冷静！”猫狗表情包]</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">这么可爱</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">带你上街会不会像牵个妹妹出门一样 😏</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">说不定会哦</div></div>
+      </div>
+    
+  </div>
+</dialog>
+
+<dialog class="chat-dialog" id="case2" aria-labelledby="case2-title">
+  <div class="chat-shell">
+    <div class="chat-head">
+      <div class="chat-person">
+        <span class="ca">乔</span>
+        <div><strong id="case2-title">乔乔</strong></div>
+      </div>
+      <button class="chat-close" type="button" data-close-dialog aria-label="关闭案例">✕</button>
+    </div>
+    <div class="chat-body">
+      
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">昨天看了个电影好困就睡觉了</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">哇，这么会给安全感</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">好呢</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">你今天要忙吗？</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">我这几天比较忙</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">前两天刚谈了个项目合作</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble"><div class="quote">乔乔：你今天要忙吗？</div>想我了？</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">赚钱最重要哈哈</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">想又见不到</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">你没约我啊</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">你不刚说最近忙嘛</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">那也要看谁约咯</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">有的人约可能我很忙</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">有的人约可能我就能抽出时间</div></div>
+      </div>
+    
+  </div>
+</dialog>
+
+<dialog class="chat-dialog" id="case3" aria-labelledby="case3-title">
+  <div class="chat-shell">
+    <div class="chat-head">
+      <div class="chat-person">
+        <span class="ca">她</span>
+        <div><strong id="case3-title">舌头表情包</strong></div>
+      </div>
+      <button class="chat-close" type="button" data-close-dialog aria-label="关闭案例">✕</button>
+    </div>
+    <div class="chat-body">
+      
+      <div class="chat-date">15:54</div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[猫咪吐舌表情包，配文“吐舌”]</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">会画清明上河图吗</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">什么东西</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[🤔 疑惑表情]</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">舌吻的时候 舌头动的频率</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">哈哈哈哈哈哈</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">哈哈哈哈哈哈</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">我不懂</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">没试过</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">没关系</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">下次我教你</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[小男孩“紧张”表情包]</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[光头小男孩“鸡鸡短 话还多”表情包]</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">这个表情包送给你</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">😂😂</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble sticker">[表情包] 别废话 你上我下 还是我上你下</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">那我把这个图送给你</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">前后不给</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">？</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">你不行，吃不消的</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">哈哈哈哈哈哈</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">我怕你腿子软</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">我怕你起不来</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">谢谢您</div></div>
+      <div class="chat-date">15:59</div>
+
+      
+
+      
+    </div>
+    
+  </div>
+</dialog>
+
+<dialog class="chat-dialog" id="case4" aria-labelledby="case4-title">
+  <div class="chat-shell">
+    <div class="chat-head">
+      <div class="chat-person">
+        <span class="ca">她</span>
+        <div><strong id="case4-title">自拍问“看得出来多长？”</strong></div>
+      </div>
+      <button class="chat-close" type="button" data-close-dialog aria-label="关闭案例">✕</button>
+    </div>
+    <div class="chat-body">
+      
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">我也看了</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">哈哈</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">好好</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">给你看</div></div>
+      <div class="chat-date">19:11</div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[对镜自拍：低胸长裙]</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">看得出来多长？</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">穿这么低胸，给其他男人看</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble sticker">[白猫探头表情包]</div></div>
+      <div class="chat-date">之后 · 截图有中断</div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">送你懂得挺多的</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">说</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[“别慌！糟糕 被发现了”表情包]</div></div>
+      <div class="chat-date">昨天 23:37</div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">那男朋友你都不给啊</div></div>
+      <div class="chat-date">昨天 23:47</div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">不是说了</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">成为男朋友怎么看都可以的咯</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">哈哈哈哈</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">不止看</div></div>
+      <div class="card blue" style="margin-top:14px">
+        <b>课程口述版（用于理解结构，不是截图原文）</b>
+        <div class="mini-chat" style="margin-top:8px">
+          <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">看得出来我腿多长？</div></div>
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble">不给男朋友看吗？</div></div>
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble">我就是你男朋友。</div></div>
+          <div class="mini-row"><span class="mini-avatar">她</span><div class="mini-bubble">成为男朋友，想怎么看都行。</div></div>
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble">不止看好。</div></div>
+        </div>
+        <p class="small" style="margin-top:9px">口述与截图用词略有差异，但结构相同：<b>接住自拍 → 把“看”与男朋友身份绑定 → 她接受 → 再加一层“不止看”。</b></p>
+      </div>
+
+      
+    </div>
+    
+  </div>
+</dialog>
+
+<dialog class="chat-dialog" id="case5" aria-labelledby="case5-title">
+  <div class="chat-shell">
+    <div class="chat-head">
+      <div class="chat-person">
+        <span class="ca">她</span>
+        <div><strong id="case5-title">“我在接客户”</strong></div>
+      </div>
+      <button class="chat-close" type="button" data-close-dialog aria-label="关闭案例">✕</button>
+    </div>
+    <div class="chat-body">
+      
+      <div class="chat-date">20:36</div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[12 秒视频/自拍]</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[搞笑哭脸表情包]</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">怎么不说话了</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">再接客户</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">给你看傻了</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">客户来了</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble sticker">[搞笑鬼脸表情包]</div></div>
+      <div class="card blue" style="margin-top:14px">
+        <b>忙完之后怎么补？</b>
+        <div class="mini-chat" style="margin-top:8px">
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">刚忙完，客户终于走了。你刚刚那个视频我看了三遍，差点没忍住笑。</div></div>
+          <div class="mini-row me"><span class="mini-avatar">我</span><div class="mini-bubble correct">你那个表情是认真的吗？我客户差点以为我在摸鱼。</div></div>
+        </div>
+        <p class="small" style="margin-top:9px">忙完要补一句，不是消失。别用“我在忙”当冷暴力的借口；如果你其实不忙，也别装忙。</p>
+      </div>
+
+      
+    </div>
+    
+  </div>
+</dialog>
+
+<dialog class="chat-dialog" id="case6" aria-labelledby="case6-title">
+  <div class="chat-shell">
+    <div class="chat-head">
+      <div class="chat-person">
+        <span class="ca">翠</span>
+        <div><strong id="case6-title">翠茹</strong></div>
+      </div>
+      <button class="chat-close" type="button" data-close-dialog aria-label="关闭案例">✕</button>
+    </div>
+    <div class="chat-body">
+      
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">跟我谈就会发现我的脾气很大，只不过是为了赚钱而已</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">钱不是万能的，但没钱是万万不能</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">很多事儿都是因为没钱</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">而且你也说了你前任不图你钱</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble">这样也显得我更不懂事了😅</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">她就是这样，把自己搞得很累</div></div>
+      <div class="msg them"><span class="avatar">她</span><div class="bubble"><div class="quote">翠茹：而且你也说了你前任不图你钱</div>虽然我也很难喜欢上别人吧，但是我喜欢上的人一定要有物质基础</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">这也是对自己负责</div></div>
+      <div class="msg me"><span class="avatar">我</span><div class="bubble">又有谁会愿意跟着一个人吃苦</div></div>
+      </div>
+    
+  </div>
+</dialog>
+
+
+
+<dialog class="chat-dialog" id="case7" aria-labelledby="case7-title">
+  <div class="chat-shell">
+      <div class="chat-head">
+        <div class="chat-person">
+          <span class="ca">她</span>
+          <div><strong id="case7-title">她说“我好好考虑一下”</strong></div>
+        </div>
+        <button class="chat-close" type="button" data-close-dialog aria-label="关闭案例">✕</button>
+      </div>
+      <div class="chat-body">
+        <div class="msg them"><span class="avatar">她</span><div class="bubble">我好好考虑一下。</div></div>
+        <div class="msg me"><span class="avatar">他</span><div class="bubble">你在考虑什么呀？</div></div>
+        <div class="msg them"><span class="avatar">她</span><div class="bubble">你知道我在考虑什么，你都懂对不对？</div></div>
+        <div class="msg me"><span class="avatar">他</span><div class="bubble">那你把你正在考虑的考虑清楚吧，我给你时间。</div></div>
+        <div class="msg them"><span class="avatar">她</span><div class="bubble">你好烦，感觉我现在被你架起来了。</div></div>
+        
+      </div>
+    
+      
+    </div>
+</dialog>
+
+<button class="back-top" type="button" id="backTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function () {
+  "use strict";
+
+  var body = document.body;
+  var dialogs = Array.prototype.slice.call(document.querySelectorAll("dialog.chat-dialog"));
+  var lastTrigger = null;
+
+  function openDialog(id, trigger) {
+    var dialog = document.getElementById(id);
+    if (!dialog) return;
+    lastTrigger = trigger || null;
+    if (typeof dialog.showModal === "function") {
+      if (!dialog.open) dialog.showModal();
+    } else {
+      dialog.setAttribute("open", "");
+    }
+    body.classList.add("modal-open");
+  }
+
+  function closeDialog(dialog) {
+    if (!dialog) return;
+    if (dialog.open && typeof dialog.close === "function") {
+      dialog.close();
+    } else {
+      dialog.removeAttribute("open");
+      body.classList.remove("modal-open");
+    }
+  }
+
+  document.addEventListener("click", function (event) {
+    var opener = event.target.closest("[data-dialog]");
+    if (opener) {
+      event.preventDefault();
+      openDialog(opener.getAttribute("data-dialog"), opener);
+      return;
+    }
+
+    var closer = event.target.closest("[data-close-dialog]");
+    if (closer) {
+      closeDialog(closer.closest("dialog.chat-dialog"));
+      return;
+    }
+
+    if (event.target.classList && event.target.classList.contains("chat-dialog")) {
+      closeDialog(event.target);
+    }
+  });
+
+  dialogs.forEach(function (dialog) {
+    dialog.addEventListener("close", function () {
+      if (!document.querySelector("dialog.chat-dialog[open]")) {
+        body.classList.remove("modal-open");
+      }
+      if (lastTrigger && typeof lastTrigger.focus === "function") {
+        lastTrigger.focus({ preventScroll: true });
+        lastTrigger = null;
+      }
+    });
+    dialog.addEventListener("click", function (event) {
+      if (event.target === dialog) closeDialog(dialog);
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    var open = document.querySelector("dialog.chat-dialog[open]");
+    if (open) {
+      event.preventDefault();
+      closeDialog(open);
+    }
+  });
+
+  /* 阅读进度 */
+  var progressBar = document.getElementById("progressBar");
+  var backTop = document.getElementById("backTop");
+  var ticking = false;
+
+  function updateScrollUI() {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - doc.clientHeight;
+    var ratio = max > 0 ? Math.min(1, Math.max(0, doc.scrollTop / max)) : 0;
+    progressBar.style.transform = "scaleX(" + ratio + ")";
+    if (backTop) backTop.classList.toggle("show", doc.scrollTop > 600);
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      window.requestAnimationFrame(updateScrollUI);
+      ticking = true;
+    }
+  }, { passive: true });
+  updateScrollUI();
+
+  if (backTop) {
+    backTop.addEventListener("click", function () {
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      window.scrollTo({ top: 0, behavior: (hash === "#main" || reduce) ? "auto" : "smooth" });
+    });
+  }
+
+  /* 目录高亮 */
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  var linkMap = {};
+  tocLinks.forEach(function (link) {
+    linkMap[link.getAttribute("href").slice(1)] = link;
+  });
+  var sections = Array.prototype.slice.call(document.querySelectorAll("main section[id]"));
+
+  if ("IntersectionObserver" in window && sections.length) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        tocLinks.forEach(function (link) { link.classList.remove("active"); });
+        var active = linkMap[entry.target.id];
+        if (active) active.classList.add("active");
+      });
+    }, { rootMargin: "-18% 0px -72% 0px", threshold: 0 });
+    sections.forEach(function (section) { observer.observe(section); });
+  }
+
+  tocLinks.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      var hash = link.getAttribute("href");
+      if (!hash || hash.charAt(0) !== "#") return;
+      var target = document.querySelector(hash);
+      if (!target) return;
+      event.preventDefault();
+      var toc = document.querySelector(".toc");
+      var offset = toc ? toc.offsetHeight + 12 : 72;
+      var top = target.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop) - offset;
+      if (hash === "#main") top = 0;
+      var root = document.documentElement;
+      var previousBehavior = root.style.scrollBehavior;
+      root.style.scrollBehavior = "auto";
+      window.scrollTo(0, Math.max(0, top));
+      root.style.scrollBehavior = previousBehavior;
+      tocLinks.forEach(function (item) { item.classList.remove("active"); });
+      link.classList.add("active");
+    });
+  });
+
+  /* 打印：临时展开全部案例与折叠内容 */
+  var printState = [];
+  var detailsState = [];
+  var printing = false;
+
+  window.addEventListener("beforeprint", function () {
+    printing = true;
+    printState = dialogs.map(function (dialog) {
+      return { dialog: dialog, wasOpen: dialog.open };
+    });
+    detailsState = Array.prototype.slice.call(document.querySelectorAll("details.fold")).map(function (detail) {
+      return { detail: detail, wasOpen: detail.open };
+    });
+    dialogs.forEach(function (dialog) {
+      if (!dialog.open) dialog.setAttribute("open", "");
+    });
+    detailsState.forEach(function (item) {
+      if (!item.wasOpen) item.detail.open = true;
+    });
+  });
+
+  window.addEventListener("afterprint", function () {
+    printing = false;
+    printState.forEach(function (item) {
+      if (!item.wasOpen && item.dialog.open) item.dialog.removeAttribute("open");
+    });
+    detailsState.forEach(function (item) {
+      if (!item.wasOpen) item.detail.open = false;
+    });
+    printState = [];
+    detailsState = [];
+    if (!document.querySelector("dialog.chat-dialog[open]")) {
+      body.classList.remove("modal-open");
+    }
+  });
+})();
+</script>
+</body>
+</html>
