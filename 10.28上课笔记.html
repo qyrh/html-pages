@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="788期魅力男神训练营第二节课课堂笔记：八大败好感行为、情绪逻辑、废物测试、推拉、冷读。">
+<meta name="color-scheme" content="light">
+<title>忌讳课（八大行为错误）＋全程聊天技巧课 · 788期第二节课</title>
+<style>
+/* ============================================================
+   0. 基础变量与重置
+   ============================================================ */
+:root{
+  --green:#07c160;
+  --green-deep:#058a45;
+  --green-dark:#0b3d2e;
+  --green-soft:#e9f8ef;
+  --green-softer:#f3fbf6;
+  --ink:#1f2328;
+  --ink-2:#3b424b;
+  --muted:#6b7280;
+  --faint:#9aa1ab;
+  --line:#e5e8e6;
+  --bg:#f2f5f3;
+  --card:#ffffff;
+  --warm:#b7791f;
+  --warm-soft:#fff8e6;
+  --red:#d92d20;
+  --red-soft:#fff1f0;
+  --blue:#175cd3;
+  --blue-soft:#eff6ff;
+  --purple:#6941c6;
+  --purple-soft:#f5f3ff;
+  --radius-lg:24px;
+  --radius:16px;
+  --radius-sm:12px;
+  --shadow:0 18px 50px rgba(14,42,28,.07);
+  --shadow-sm:0 4px 14px rgba(14,42,28,.05);
+  --max:1120px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{
+  scrollbar-gutter:stable;
+  -webkit-text-size-adjust:100%;
+}
+body{
+  margin:0;
+  font-family:var(--font);
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 8% 0%,rgba(7,193,96,.10),transparent 32rem),
+    radial-gradient(circle at 95% 18%,rgba(183,121,31,.08),transparent 28rem),
+    var(--bg);
+  line-height:1.75;
+  font-size:16px;
+  text-rendering:optimizeLegibility;
+}
+body.modal-open{overflow:hidden}
+img{max-width:100%;display:block}
+a{color:var(--green-deep);text-underline-offset:3px}
+a:hover{color:var(--green)}
+button{font:inherit}
+::selection{background:rgba(7,193,96,.22)}
+
+.skip-link{
+  position:fixed;left:14px;top:-60px;z-index:2000;
+  background:var(--green-dark);color:#fff;padding:10px 16px;
+  border-radius:0 0 10px 10px;text-decoration:none;transition:top .2s;
+}
+.skip-link:focus{top:0;color:#fff}
+
+/* ============================================================
+   1. 阅读进度与顶部导航
+   ============================================================ */
+.progress{
+  position:fixed;inset:0 0 auto 0;height:4px;z-index:1500;
+  background:transparent;pointer-events:none;
+}
+.progress span{
+  display:block;height:100%;width:100%;
+  background:linear-gradient(90deg,#07c160,#45d98b,#b7f0cd);
+  transform:scaleX(0);transform-origin:0 50%;
+  will-change:transform;
+}
+
+.toc{
+  position:sticky;top:0;z-index:900;
+  background:rgba(255,255,255,.92);
+  border-bottom:1px solid rgba(20,50,32,.08);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+.toc-inner{
+  max-width:var(--max);margin:0 auto;padding:0 18px;
+  display:flex;align-items:center;gap:8px;
+  min-height:58px;overflow-x:auto;scrollbar-width:none;
+}
+.toc-inner::-webkit-scrollbar{display:none}
+.toc-brand{
+  flex:0 0 auto;display:flex;align-items:center;gap:9px;
+  margin-right:8px;font-weight:800;font-size:14px;color:var(--green-dark);
+  letter-spacing:.02em;white-space:nowrap;
+}.toc a{
+  flex:0 0 auto;display:inline-flex;align-items:center;
+  padding:7px 11px;border-radius:999px;
+  color:var(--muted);text-decoration:none;font-size:13.5px;
+  white-space:nowrap;transition:background .18s,color .18s;
+}
+.toc a:hover{background:var(--green-soft);color:var(--green-deep)}
+.toc a.active{background:var(--green-deep);color:#fff}
+.toc a.toc-brand{color:var(--green-dark);font-weight:800;padding-left:0;padding-right:10px}
+
+/* ============================================================
+   2. 标题
+   ============================================================ */
+.note-head{
+  max-width:var(--max);margin:0 auto;
+  padding:clamp(34px,6vw,56px) 22px 16px;
+}
+.note-head h1{
+  margin:0;color:var(--ink);
+  font-size:clamp(1.7rem,4vw,2.4rem);
+  line-height:1.3;letter-spacing:-.02em;font-weight:800;
+}
+
+/* ============================================================
+   3. 主体版式
+   ============================================================ */
+main{max-width:var(--max);margin:0 auto;padding:0 18px 34px}
+.section{
+  position:relative;
+  margin:26px 0;
+  padding:clamp(24px,4.4vw,46px);
+  background:var(--card);
+  border:1px solid rgba(18,60,36,.06);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow);
+  scroll-margin-top:78px;
+}
+.section-head{margin-bottom:26px}
+.section-kicker{
+  display:flex;align-items:center;gap:9px;
+  margin-bottom:8px;color:var(--green-deep);
+  font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+}
+.section-kicker .num{
+  display:inline-grid;place-items:center;
+  width:26px;height:26px;border-radius:8px;
+  background:var(--green-soft);color:var(--green-deep);
+  font-size:12px;letter-spacing:0;
+}
+h2{
+  margin:0 0 10px;
+  font-size:clamp(1.45rem,3.2vw,2.05rem);
+  line-height:1.3;letter-spacing:-.02em;color:var(--ink);
+}
+h3{
+  margin:30px 0 10px;
+  font-size:clamp(1.08rem,2.2vw,1.28rem);
+  line-height:1.45;color:var(--ink);
+}
+h4{margin:0 0 7px;font-size:1rem;line-height:1.5;color:var(--ink)}
+p{margin:0 0 12px;color:var(--ink-2)}
+.lead{font-size:clamp(15px,2vw,17px);color:var(--ink-2);line-height:1.85}
+.muted{color:var(--muted)}
+.small{font-size:13px;line-height:1.7}
+.tiny{font-size:12px;line-height:1.65}
+strong,b{color:var(--ink)}
+mark{
+  background:linear-gradient(transparent 55%,#c9f7d9 0);
+  color:inherit;padding:0 1px;
+}
+
+.grid-2,.grid-3,.grid-4{display:grid;gap:14px}
+.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+.card{
+  padding:18px;border-radius:var(--radius);
+  background:#fff;border:1px solid var(--line);
+  box-shadow:var(--shadow-sm);
+}
+.card.soft{background:var(--green-softer);border-color:#d9f0e2;box-shadow:none}
+.card.good{background:#f7fdf9;border-color:#cdeed9;box-shadow:none}
+.card.warm{background:var(--warm-soft);border-color:#f2dfb0;box-shadow:none}
+.card.blue{background:var(--blue-soft);border-color:#d4e5ff;box-shadow:none}
+.card.purple{background:var(--purple-soft);border-color:#e5ddff;box-shadow:none}
+.card p:last-child,.card ul:last-child,.card ol:last-child{margin-bottom:0}
+
+ul,ol{margin:0 0 14px;padding-left:1.25em;color:var(--ink-2)}
+li{margin:5px 0}
+li::marker{color:var(--green-deep)}
+ul.clean{list-style:none;padding-left:0}
+ul.clean li{position:relative;padding-left:20px}
+ul.clean li::before{
+  content:"";position:absolute;left:2px;top:.72em;
+  width:6px;height:6px;border-radius:50%;background:var(--green);
+}
+
+.pill{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:3px 9px;border-radius:999px;
+  background:var(--green-soft);color:var(--green-deep);
+  font-size:12px;font-weight:700;line-height:1.7;
+}
+.pill.warm{background:var(--warm-soft);color:var(--warm)}
+.pill.red{background:var(--red-soft);color:var(--red)}
+.pill.blue{background:var(--blue-soft);color:var(--blue)}
+.pill.gray{background:#f2f4f3;color:var(--muted)}
+
+.callout{
+  position:relative;
+  margin:18px 0;padding:16px 18px 16px 20px;
+  border-radius:14px;background:var(--green-softer);
+  border:1px solid #d8f0e1;color:var(--ink-2);
+}
+.callout::before{
+  content:"";position:absolute;left:0;top:14px;bottom:14px;width:4px;
+  border-radius:0 4px 4px 0;background:var(--green);
+}
+.callout.info{background:var(--blue-soft);border-color:#d6e6ff}
+.callout.info::before{background:var(--blue)}
+.callout.warn{background:var(--warm-soft);border-color:#f0dfb8}
+.callout.warn::before{background:#d69e2e}
+.callout.danger{background:var(--red-soft);border-color:#ffd7d3}
+.callout.danger::before{background:var(--red)}
+.callout.quote{background:#faf9f6;border-color:#eee8dc}
+.callout.quote::before{background:#b7791f}
+.callout p:last-child{margin-bottom:0}
+.callout-title{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-weight:800;color:var(--ink)}
+.callout-title .ico{
+  display:inline-grid;place-items:center;width:22px;height:22px;border-radius:7px;
+  background:rgba(7,193,96,.13);color:var(--green-deep);font-size:13px;
+}
+.callout.warn .callout-title .ico{background:rgba(214,158,46,.16);color:#92610b}
+.callout.danger .callout-title .ico{background:rgba(217,45,32,.12);color:var(--red)}
+.callout.info .callout-title .ico{background:rgba(23,92,211,.10);color:var(--blue)}
+
+.blockquote{
+  margin:18px 0;padding:16px 18px;
+  border-left:4px solid var(--green);
+  background:linear-gradient(90deg,var(--green-softer),#fff);
+  border-radius:0 14px 14px 0;
+  color:var(--ink-2);font-size:15px;
+}
+.blockquote p:last-child{margin-bottom:0}
+.blockquote cite{display:block;margin-top:6px;color:var(--muted);font-size:12px;font-style:normal}
+
+/* ============================================================
+   4. 表格
+   ============================================================ */
+.table-wrap{
+  margin:16px 0;overflow-x:auto;
+  border:1px solid var(--line);border-radius:14px;
+  background:#fff;
+}
+table{width:100%;border-collapse:collapse;min-width:560px;font-size:14px}
+th,td{padding:12px 14px;text-align:left;vertical-align:top;border-bottom:1px solid #eef1ef}
+th{
+  background:#f7faf8;color:var(--ink);font-size:12.5px;
+  letter-spacing:.03em;white-space:nowrap;
+}
+tr:last-child td{border-bottom:0}
+td{color:var(--ink-2)}
+td strong{color:var(--ink)}
+.table-wrap.compact table{min-width:420px}
+.table-wrap.compact th,.table-wrap.compact td{padding:9px 12px}
+
+/* ============================================================
+   5. 流程 / 步骤
+   ============================================================ */
+.flow{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:8px;margin:20px 0 6px;
+}
+.flow-step{
+  position:relative;padding:14px 12px;
+  border:1px solid var(--line);border-radius:14px;
+  background:#fff;box-shadow:var(--shadow-sm);
+}
+.flow-step:not(:last-child)::after{
+  content:"→";position:absolute;right:-13px;top:50%;
+  transform:translateY(-50%);color:#b6c6bd;font-weight:800;z-index:2;
+}
+.flow-step .n{
+  display:inline-grid;place-items:center;width:24px;height:24px;
+  border-radius:8px;background:var(--green-soft);color:var(--green-deep);
+  font-size:12px;font-weight:900;margin-bottom:7px;
+}
+.flow-step b{display:block;font-size:14px;line-height:1.4}
+.flow-step small{display:block;margin-top:3px;color:var(--muted);font-size:11.5px;line-height:1.5}
+
+.step-block{
+  margin:22px 0 0;padding:22px;
+  border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(180deg,#fff,#fbfdfb);
+}
+.step-block + .step-block{margin-top:16px}
+.step-title{display:flex;align-items:flex-start;gap:13px;margin-bottom:12px}
+.step-title .step-num{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:42px;height:42px;border-radius:13px;
+  background:var(--green-dark);color:#fff;
+  font-weight:900;font-size:14px;
+  box-shadow:0 6px 14px rgba(11,61,46,.18);
+}
+.step-title h3{margin:0}
+.step-title p{margin:2px 0 0;color:var(--muted);font-size:13px}
+.step-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.step-meta .meta{
+  padding:12px 13px;border-radius:12px;
+  background:#f7faf8;border:1px solid #e9f1ec;
+}
+.step-meta .meta b{display:block;font-size:12px;color:var(--green-deep);letter-spacing:.04em;margin-bottom:2px}
+.step-meta .meta span{font-size:13px;color:var(--ink-2);line-height:1.65}
+
+/* ============================================================
+   6. 案例按钮 / 折叠
+   ============================================================ */
+.case-link-row{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;
+  margin:14px 0;
+}
+.case-link-label{font-size:12px;color:var(--muted)}
+.case-link{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 10px;border:1px solid #b9e6c9;border-radius:8px;
+  background:#f3fbf6;color:var(--green-deep);
+  font-size:13px;font-weight:700;line-height:1.5;
+  text-align:left;cursor:pointer;
+  transition:background .15s,color .15s,border-color .15s;
+}
+.case-link::before{content:"▶";font-size:9px;line-height:1}
+.case-link:hover{background:var(--green-deep);border-color:var(--green-deep);color:#fff}
+.case-link:focus-visible{outline:3px solid rgba(7,193,96,.30);outline-offset:2px}
+
+details.fold{
+  margin:16px 0;border:1px solid var(--line);border-radius:14px;
+  background:#fff;overflow:hidden;
+}
+details.fold > summary{
+  cursor:pointer;list-style:none;
+  padding:13px 16px;background:#f8faf9;
+  font-weight:700;font-size:14px;color:var(--ink);
+  display:flex;align-items:center;gap:8px;
+}
+details.fold > summary::-webkit-details-marker{display:none}
+details.fold > summary::before{
+  content:"+";display:inline-grid;place-items:center;
+  width:21px;height:21px;border-radius:7px;
+  background:var(--green-soft);color:var(--green-deep);
+  font-weight:900;font-size:13px;
+}
+details.fold[open] > summary::before{content:"−"}
+details.fold > .fold-body{padding:15px 16px 17px;border-top:1px solid var(--line)}
+details.fold > .fold-body > :last-child{margin-bottom:0}
+
+/* ============================================================
+   7. 对照卡 / 迷你聊天
+   ============================================================ */
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:14px 0}
+.compare .panel{
+  padding:14px;border-radius:14px;border:1px solid var(--line);
+  background:#fff;min-width:0;
+}
+.compare .panel.bad{background:#fffafa;border-color:#f6d9d5}
+.compare .panel.good{background:#f7fdf9;border-color:#cdeed9}
+.compare .panel.plus{background:#f8faff;border-color:#d9e6ff}
+.panel-label{
+  display:inline-flex;align-items:center;gap:5px;
+  margin-bottom:9px;padding:2px 8px;border-radius:999px;
+  font-size:11.5px;font-weight:800;letter-spacing:.02em;
+}
+.panel-label.bad{background:var(--red-soft);color:var(--red)}
+.panel-label.good{background:var(--green-soft);color:var(--green-deep)}
+.panel-label.plus{background:var(--blue-soft);color:var(--blue)}
+.panel .why{margin-top:9px;padding-top:9px;border-top:1px dashed #e3e8e5;color:var(--muted);font-size:12.5px;line-height:1.65}
+
+.mini-chat{display:flex;flex-direction:column;gap:7px}
+.mini-row{display:flex;align-items:flex-start;gap:7px}
+.mini-row.me{justify-content:flex-end}
+.mini-avatar{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:25px;height:25px;border-radius:8px;
+  background:#f0d9d9;color:#8f4c4c;font-size:10px;font-weight:800;
+}
+.mini-row.me .mini-avatar{background:#d9e8f0;color:#315b73;order:2}
+.mini-bubble{
+  max-width:84%;padding:7px 10px;border-radius:9px;
+  background:#fff;border:1px solid #e8ebe9;
+  font-size:13px;line-height:1.6;color:var(--ink-2);
+  word-break:break-word;
+}
+.mini-row.me .mini-bubble{background:#95ec69;border-color:#83dc57;color:#12210c}
+.mini-bubble.sticker{background:#fafafa;border-style:dashed;color:var(--muted);font-size:12px}
+.mini-bubble.voice{color:var(--muted)}
+.mini-bubble.error{background:#fff2f0;border-color:#f3c7c1}
+.mini-bubble.correct{background:#f1fcf5;border-color:#b9e8c9}
+
+/* ============================================================
+   8. 关键词高亮
+   ============================================================ */
+.kw{
+  display:inline-block;padding:0 4px;margin:0 1px;
+  border-radius:5px;background:#fff0b8;color:#6b4d00;
+  font-weight:800;box-decoration-break:clone;
+}
+.kw.green{background:#c9f7d9;color:#075c38}
+.kw.blue{background:#dbeafe;color:#1e40af}
+.kw.purple{background:#ede9fe;color:#5b21b6}
+.sentence{
+  margin:14px 0;padding:15px 16px;border-radius:14px;
+  background:#fbfaf5;border:1px solid #efe9d9;
+  font-size:15px;line-height:2;color:var(--ink);
+}
+.kw-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:12px 0}
+.kw-branch{
+  padding:11px 12px;border-radius:12px;background:#fff;
+  border:1px solid var(--line);font-size:12.5px;color:var(--ink-2);
+}
+.kw-branch b{display:block;color:var(--ink);font-size:13px;margin-bottom:2px}
+
+/* ============================================================
+   9. 清单 / 时间线
+   ============================================================ */
+.checklist{list-style:none;padding-left:0;margin:14px 0}
+.checklist li{
+  position:relative;padding:8px 10px 8px 36px;
+  border-bottom:1px dashed #e8ece9;color:var(--ink-2);font-size:14px;
+}
+.checklist li:last-child{border-bottom:0}
+.checklist li::before{
+  content:"";position:absolute;left:8px;top:12px;
+  width:15px;height:15px;border-radius:5px;
+  border:1.5px solid #b9c9bf;background:#fff;
+}
+.checklist li::after{
+  content:"✓";position:absolute;left:10.5px;top:8px;
+  color:var(--green-deep);font-size:12px;font-weight:900;
+  opacity:0;transform:scale(.6);transition:.15s;
+}
+.checklist li:hover::after{opacity:.35;transform:scale(1)}
+
+.timeline{position:relative;margin:18px 0 0;padding-left:26px}
+.timeline::before{
+  content:"";position:absolute;left:8px;top:5px;bottom:5px;
+  width:2px;background:linear-gradient(var(--green),#d7f5e2);
+}
+.timeline-item{position:relative;margin:0 0 18px;padding:0 0 0 4px}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-item::before{
+  content:"";position:absolute;left:-24px;top:6px;
+  width:10px;height:10px;border-radius:50%;
+  background:#fff;border:2px solid var(--green);
+  box-shadow:0 0 0 4px rgba(7,193,96,.10);
+}
+.timeline-item .when{
+  display:inline-block;margin-bottom:2px;color:var(--green-deep);
+  font-size:12px;font-weight:800;letter-spacing:.05em;
+}
+.timeline-item b{display:block;margin-bottom:2px}
+.timeline-item p{margin:0;font-size:14px;color:var(--ink-2)}
+
+/* ============================================================
+   10. 聊天弹窗
+   ============================================================ */
+dialog.chat-dialog{
+  width:min(472px,calc(100vw - 22px));
+  max-width:472px;max-height:90vh;max-height:90dvh;
+  margin:auto;padding:0;border:0;background:transparent;
+  overflow:visible;
+}
+dialog.chat-dialog::backdrop{
+  background:rgba(6,20,13,.64);
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+}
+.chat-shell{
+  display:flex;flex-direction:column;
+  max-height:90vh;max-height:90dvh;overflow:hidden;
+  background:#ededed;border-radius:18px;
+  box-shadow:0 30px 80px rgba(0,0,0,.35);
+  animation:popIn .22s ease-out;
+}
+@keyframes popIn{
+  from{opacity:0;transform:translateY(8px) scale(.97)}
+  to{opacity:1;transform:none}
+}
+.chat-head{
+  flex:0 0 auto;display:flex;align-items:center;gap:10px;
+  padding:12px 14px;background:#f7f7f7;border-bottom:1px solid #ddd;
+}
+.chat-head .back{
+  display:grid;place-items:center;width:28px;height:28px;
+  color:#333;font-size:18px;line-height:1;
+}
+.chat-person{display:flex;align-items:center;gap:9px;min-width:0;flex:1}
+.chat-person .ca{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:34px;height:34px;border-radius:9px;
+  background:linear-gradient(135deg,#f3d6d6,#e7bcbc);
+  color:#7c3f3f;font-size:12px;font-weight:900;
+}
+.chat-person strong{display:block;font-size:14.5px;line-height:1.2;color:#222}
+.chat-person small{display:block;margin-top:1px;color:#888;font-size:11px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-close{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:32px;height:32px;border:0;border-radius:50%;
+  background:#e8e8e8;color:#444;cursor:pointer;font-size:15px;
+  transition:background .15s;
+}
+.chat-close:hover{background:#dcdcdc}
+.chat-close:focus-visible{outline:3px solid rgba(7,193,96,.35);outline-offset:2px}
+.chat-body{
+  flex:1 1 auto;overflow-y:auto;overscroll-behavior:contain;
+  padding:16px 13px 24px;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(255,255,255,.55),transparent 18rem),
+    #ededed;
+  scrollbar-width:thin;
+}
+.chat-date{
+  margin:8px auto 14px;width:max-content;max-width:90%;
+  padding:2px 8px;border-radius:5px;
+  background:rgba(0,0,0,.05);color:#8a8a8a;
+  font-size:11px;text-align:center;
+}
+.msg{display:flex;align-items:flex-start;gap:8px;margin:9px 0}
+.msg.me{justify-content:flex-end}
+.msg .avatar{
+  flex:0 0 auto;display:grid;place-items:center;
+  width:36px;height:36px;border-radius:8px;
+  background:#f0d9d9;color:#8f4c4c;font-size:11px;font-weight:900;
+}
+.msg.me .avatar{background:#d9e8f0;color:#315b73;order:2}
+.msg .bubble{
+  position:relative;max-width:76%;
+  padding:9px 12px;border-radius:9px;
+  background:#fff;color:#222;
+  font-size:14px;line-height:1.65;
+  word-break:break-word;white-space:pre-wrap;
+  box-shadow:0 1px 1px rgba(0,0,0,.04);
+}
+.msg.me .bubble{background:#95ec69;color:#12210c}
+.msg .bubble::before{
+  content:"";position:absolute;top:12px;left:-5px;
+  border-top:5px solid transparent;border-bottom:5px solid transparent;
+  border-right:5px solid #fff;
+}
+.msg.me .bubble::before{
+  left:auto;right:-5px;border-right:0;border-left:5px solid #95ec69;
+}
+.msg.sticker .bubble{
+  background:#fafafa;border:1px dashed #d6d6d6;
+  color:#777;font-size:12.5px;
+}
+.msg.sticker .bubble::before{border-right-color:#fafafa}
+.msg.me.sticker .bubble{background:#eefbe6;border-color:#bfe6a8;color:#456b32}
+.msg.me.sticker .bubble::before{border-left-color:#eefbe6;border-right-color:transparent}
+.msg.voice .bubble{color:#333}
+.msg.voice .bubble .wave{color:#666;letter-spacing:2px;margin-right:5px}
+.msg .quote{
+  margin-bottom:6px;padding:5px 8px;border-radius:6px;
+  background:#f1f1f1;color:#777;font-size:11.5px;line-height:1.55;
+  border-left:3px solid #d6d6d6;
+}
+.msg.me .quote{background:rgba(255,255,255,.55);border-left-color:rgba(0,0,0,.12);color:#4f5a47}
+.msg-note{
+  margin:4px 0 12px 44px;padding:8px 10px;
+  border-radius:8px;background:rgba(255,255,255,.72);
+  border-left:3px solid var(--green);
+  color:#3b5a45;font-size:11.5px;line-height:1.6;
+}
+.msg-note.bad{border-left-color:#e5484d;color:#8f2f2b;background:#fff7f6}
+.msg-note.warn{border-left-color:#d69e2e;color:#7a540e;background:#fffbf0}
+.msg-note.me{margin-left:44px;margin-right:0}
+.chat-summary{
+  margin:18px 0 2px;padding:13px 14px;
+  border-radius:12px;background:rgba(255,255,255,.88);
+  border:1px solid rgba(7,193,96,.16);
+  color:#3e4a42;font-size:12.5px;line-height:1.75;
+}
+.chat-summary b{display:block;margin-bottom:3px;color:var(--green-deep);font-size:12px;letter-spacing:.04em}
+.chat-summary ul{margin:4px 0 0;padding-left:1.1em}
+.chat-summary li{margin:2px 0}
+.chat-foot{
+  flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:9px 14px;background:#f7f7f7;border-top:1px solid #ddd;
+  color:#999;font-size:10.5px;
+}
+.chat-foot kbd{
+  display:inline-block;padding:1px 5px;border-radius:4px;
+  background:#fff;border:1px solid #d8d8d8;color:#666;
+  font-family:inherit;font-size:10px;
+}
+
+/* ============================================================
+   11. 返回顶部 / 页脚
+   ============================================================ */
+.back-top{
+  position:fixed;right:18px;bottom:18px;z-index:800;
+  width:46px;height:46px;border:0;border-radius:50%;
+  background:var(--green-dark);color:#fff;cursor:pointer;
+  box-shadow:0 10px 24px rgba(11,61,46,.28);
+  display:grid;place-items:center;font-size:18px;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:.2s;
+}
+.back-top.show{opacity:1;visibility:visible;transform:none}
+.back-top:hover{background:var(--green-deep)}
+.back-top:focus-visible{outline:3px solid rgba(7,193,96,.35);outline-offset:3px}
+
+/* ============================================================
+   12. 响应式
+   ============================================================ */
+@media (max-width:900px){
+  .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .flow{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .flow-step:nth-child(3)::after{display:none}
+}
+@media (max-width:720px){
+  body{font-size:15px}
+  main{padding:0 10px 22px}
+  .section{margin:14px 0;border-radius:18px}
+  .grid-2,.grid-3,.grid-4,.compare,.step-meta,.kw-map{grid-template-columns:1fr}
+  .flow{grid-template-columns:1fr 1fr}
+  .flow-step::after{display:none}
+  .toc-inner{min-height:52px;padding:0 12px}
+  .toc-brand{font-size:12.5px}
+  .toc a{font-size:12.5px;padding:6px 9px}
+  dialog.chat-dialog{width:calc(100vw - 12px);max-height:94vh;max-height:94dvh}
+  .chat-shell{max-height:94vh;max-height:94dvh;border-radius:14px}
+  .msg .bubble{max-width:80%;font-size:13.5px}
+  .msg .avatar{width:32px;height:32px;border-radius:7px}
+  .msg-note{margin-left:40px}
+  .chat-body{padding-left:10px;padding-right:10px}
+  .back-top{right:12px;bottom:12px;width:42px;height:42px}
+}
+@media (max-width:420px){
+  .step-block{padding:16px}
+  .card{padding:14px}
+  .chat-person small{max-width:190px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:11.5pt;color:#000}
+  .progress,.toc,.back-top,.case-arrow,.chat-close,.chat-foot{display:none!important}
+  .section{box-shadow:none;border:1px solid #ddd;break-inside:avoid;padding:18px}
+  .card,.callout,.blockquote,.table-wrap,.step-block{break-inside:avoid}
+  a{color:#000;text-decoration:none}
+  details.fold{break-inside:avoid}
+  dialog.chat-dialog{
+    display:none!important;position:static!important;
+    width:100%!important;max-width:100%!important;max-height:none!important;
+    page-break-before:always;
+  }
+  dialog.chat-dialog[open]{display:block!important}
+  .chat-shell{max-height:none!important;box-shadow:none!important;border:1px solid #ccc;background:#fff}
+  .chat-body{overflow:visible!important;max-height:none!important;background:#fff}
+  .msg .bubble{box-shadow:none;border:1px solid #ccc}
+  .msg.me .bubble{background:#eafbe3}
+  .chat-head{background:#f5f5f5}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="note-head">
+  <h1>忌讳课（八大行为错误）＋全程聊天技巧课</h1>
+  <p class="meta">788期魅力男神魔力聊天训练营 · 第二节课 · 2026-10-28 19:50 开课 · 讲师：恋爱教练光哥（@芷阳成文化）</p>
+</header>
+
+<nav class="toc" aria-label="页面目录">
+  <div class="toc-inner">
+    <a class="toc-brand" href="#main">目录</a>
+    <a href="#outline">课程大纲</a>
+    <a href="#eight">八大行为</a>
+    <a href="#emotion">情绪逻辑</a>
+    <a href="#test">废物测试</a>
+    <a href="#pushpull">推拉</a>
+    <a href="#coldread">冷读</a>
+    <a href="#case">实战案例</a>
+    <a href="#checklist">要点清单</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <section class="section" id="outline">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">00</span>课程大纲</div>
+      <h2>这节课讲什么</h2>
+    </div>
+    <div class="card">
+      <ol class="clean">
+        <li><b>八大会降低女生好感的行为</b></li>
+        <li><b>男神心态建设</b></li>
+        <li><b>废物测试讲解</b></li>
+        <li><b>推拉技巧</b></li>
+        <li><b>冷读技巧</b></li>
+      </ol>
+      <p class="why">开课原话：通过这两天交流，很多兄弟都是有很大机会跟女生在一起的，只是心态出现了问题、出现很多错误行为，导致跟女生越来越尴尬，所以先讲这节课，避免大家把女生聊死。</p>
+    </div>
+  </section>
+
+  <section class="section" id="eight">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">01</span>八大行为</div>
+      <h2>八个会败光女生好感的行为</h2>
+      <p class="lead">课纲图三张已给出 1、2、3 项；其余项本节课未在群内展开。</p>
+    </div>
+
+    <div class="callout quote">
+      <p>“给兄弟们说一个残忍的真相，那些你们认为很平常、自以为是是对女生好的行为，其实呢，是在减弱女生对你们的好感，甚至的话，让女生觉得你很下头。”</p>
+      <p>“真诚其实加上任何一项都是王炸，但唯独你单出才是死牌。反而那些能够让你放平心态的行为，会让女生对你产生好感。”</p>
+      <p>“造成这种情况的核心问题就是你无意识地做出的 8 种行为，让女生对你瞬间下头。”</p>
+    </div>
+
+    <h3>1. 对女生很饥渴</h3>
+    <div class="grid-2">
+      <div class="card soft">
+        <span class="pill">课纲图</span>
+        <p>八个会败光女生好感的行为 · 1. 对女生很饥渴</p>
+        <p class="why">配图：蹲坐抱花束的男子，配字「舔狗开始工作」</p>
+      </div>
+      <div class="card warm">
+        <span class="pill">对女生饥渴的两大表现</span>
+        <ul class="clean">
+          <li>① 消息轰炸</li>
+          <li>② 查户口式的聊天</li>
+        </ul>
+      </div>
+    </div>
+
+    <h4>能量失衡</h4>
+    <p>正是因为这个差异，所以导致很多女生还没有对我们男生产生感觉的时候，很多兄弟可能都已经想到结婚生孩子了。这种情绪不对等就会导致男方的一个能量需求过于强烈，从而导致能量失衡。</p>
+    <p>人是一个很奇怪的动物，越是难以得到的事物就越会想要去得到，越是容易得到的，甚至说送上门的反而摆摆手摇头。</p>
+
+    <h4>奶茶店类比：行为传递匮乏</h4>
+    <p>就像喜茶、茶园夜市这些排队人多的奶茶店，反而会越排越长，生意会越做越好。像街边免费给你们试喝的奶茶店，你反而会下意识地就想拒绝。这个就叫人性。</p>
+    <p>因为你们的行为传递出来就是匮乏——只有缺少资源、无人问津的人，才会对别人饥渴。假如你自己的内心很富足，那么你的行为并不会让对方觉得你很饥渴。</p>
+
+    <h4>表现一：信息轰炸</h4>
+    <p>一旦喜欢一个女生，一旦女孩子稍微挽回一点点，他们就会通过信息轰炸来获得女生的回应。</p>
+    <p>在女生眼里看来，这就是很饥渴的表现，也会让女生觉得你一天到晚都在看手机，没有自己的生活。当你这种行为多了之后，女生也会慢慢地不在意你的消息——她会想，反正我不理他，他一样会来找我，我爱回回，不爱回就不回。</p>
+
+    <h4>表现二：查户口（高级版）</h4>
+    <p>很多兄弟也知道查户口不对，也有所调整，所以现在看到更多的是<strong>高级的查户口</strong>：不断地在女生身上挖掘话题，去问各种各样的话题，想要全面地了解女生。</p>
+    <p>其实这是一个正常的表现——当你喜欢一件事物的时候，你自然疯狂地想要去了解它、收集它的相关信息。比如你喜欢打游戏，就会疯狂去搜游戏攻略；你喜欢明星，就会疯狂去了解他的生活、他的成长轨迹。</p>
+    <p>但是，在追女生这件事情上，你收集女生的信息并没有什么卵用，结果恰恰相反：你这种行为只会快速把女孩子推开。你一上来就套各种对方的信息，只会让对方很没有安全感。</p>
+    <div class="callout quote">
+      <p>“换位思考一下就知道了：一个陌生人一上来就套你各种信息，你自己是什么感觉？是不是会觉得对方可能有什么阴谋？你会下意识地把自己封闭起来，交流起来你会更加的拘谨，对吧。”</p>
+    </div>
+
+    <h3>2. 太快邀约</h3>
+    <div class="grid-2">
+      <div class="card soft">
+        <span class="pill">课纲图</span>
+        <p>八个会败光女生好感的行为 · 2. 太快邀约</p>
+        <p class="why">配图：酒吧里一男一女对坐。右侧文字：没有聊到一定的火候，不要随便邀约对方，会暴露需求感。</p>
+      </div>
+      <div class="card">
+        <span class="pill">原话</span>
+        <p>“聊天的目的就是为了约出来”——这句话可真是误导人，它在十几年前是对的。</p>
+      </div>
+    </div>
+
+    <h4>为什么十几年前成立</h4>
+    <p>当时大家没有什么社交软件，和女生聊天靠的基本上都是短信，短信差不多是一毛钱一条。你的短信聊天聊 100 句就已经 10 块钱了，而你约出来喝杯东西，那个成本同样是 10 块钱左右，就能聊一下午。很明显后者更加节约成本。</p>
+
+    <h4>为什么现在不成立</h4>
+    <p>现在这个时代变了：社交软件盛行，发信息根本不要钱，甚至语音视频还能够很好地还原现场的感觉。女生了解你的信息也多种多样了，根本就不需要通过见面来完成。相比线上线下，反而成本更大——网上发信息不要钱，你线下一杯星巴克得好几十。</p>
+
+    <h4>结论</h4>
+    <p>没有聊到一定的火候，千万不要随便地把女孩子约出来、随便地去邀约。过早地邀约反而会暴露目的：女生一旦发现你的目的性，她就会下意识地选择拒绝，下意识地开始防备你。</p>
+
+    <h3>3. 油腔滑调</h3>
+    <div class="grid-2">
+      <div class="card soft">
+        <span class="pill">课纲图</span>
+        <p>八个会败光女生好感的行为 · 3. 油腔滑调</p>
+        <p class="why">配图：男子面部特写，配字「欲强又止」。右侧文字：不要乱撩妹 / 会让女生觉得你不靠谱 / 并且女生会没安全感。</p>
+      </div>
+      <div class="card warm">
+        <span class="pill">本节录音</span>
+        <p>本节对应语音 35″ 与 26″ 两条，<b>转文字失败</b>（气泡旁红点、长按菜单重试仍无结果），该段正文缺失。</p>
+      </div>
+    </div>
+    <p>接续的课程原话：<em>（按下去会讲我们女生的第 4 点推拉技巧）那我接下去就以文字跟案例的形式去讲解，希望兄弟们用心地做好笔记。</em></p>
+  </section>
+
+  <section class="section" id="emotion">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">02</span>底层认知</div>
+      <h2>女生是怎么产生感觉的</h2>
+      <p class="lead">这节课给兄弟植入的最底层认知：女生是用情绪思考的物种。</p>
+    </div>
+
+    <div class="callout quote">
+      <p>“99% 的男生都死在了一句：你很好，但是我对你没感觉。”</p>
+      <p>“你所有的好、你的付出、你的讨好、你的金钱，都是在跟她脑海里形成<strong>逻辑层</strong>对话。而决定她是否对你投入的，是她大脑最深处的<strong>原始情绪层</strong>。”</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <span class="pill">情绪层的特性</span>
+        <p>它不讲道理，不看逻辑，它只对一样东西产生反应——<b>情绪波动</b>。</p>
+      </div>
+      <div class="card">
+        <span class="pill">结论</span>
+        <p>你的核心武器不是你的钱包，而是制造情绪波动的能力。</p>
+      </div>
+    </div>
+
+    <h3>贝塔男 vs 阿尔法男</h3>
+    <ul class="clean">
+      <li><b>贝塔男：</b>试图用“好”去说服女人喜欢他，就好比用钞票去贿赂一台机器一样，毫无意义。</li>
+      <li><b>阿尔法男：</b>利用技巧去打入女生的情绪系统。收起那套自以为是的付出，你必须成为她的情绪调动者。</li>
+    </ul>
+
+    <h3>过山车模型</h3>
+    <p>就好像她在你身上体验了一把刺激的过山车：你时而推开，时而拉进，时而冷漠，时而热烈。你的一切行为女生都无法预测，对你充满好奇，你让她身上永远得不到一个稳定的预期。</p>
+    <p>这种由你主导的混乱情绪体验，会让她大脑产生一种致命的错觉：<b>这就是心动</b>。她会因为这种情绪失控感而感到上瘾，就会合理化自己的行为——“我为什么会这么在意他？我可能喜欢上他了”。</p>
+    <div class="callout quote">
+      <p>“这不是在‘追她’，你是在她大脑里，为她编写‘爱你’的剧本。”</p>
+    </div>
+
+    <h3>最后一步：相互投入</h3>
+    <p>当她的情绪完全被你带动之后，必须执行最后一步，也是最关键的一步：相互投入。让双方为这段关系付出时间精力，大家都在为这段关系做事、为它服务。</p>
+    <p>这不是公平，这是在增加双方对于这段关系的<b>沉没成本</b>。大家投入的越多，就越无法离开。</p>
+    <div class="card warm">
+      <span class="pill">本段收束</span>
+      <p>用情绪波动击穿她的防御，用相互投入锁定这段关系——这才是让女生对你“产生感觉”的唯一通路。和女生升级关系说穿了就是：调动她的情绪，触发心动感，有意识展示自己的高价值，获得基因认同。</p>
+    </div>
+  </section>
+
+  <section class="section" id="test">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">03</span>废物测试</div>
+      <h2>顶级推拉案例：三页逐句拆解</h2>
+      <p class="lead">群内连发三张带红色批注的聊天截图（347K／361K／403K），以下按原图逐句还原，红字为原图批注。</p>
+    </div>
+
+    <div class="card">
+      <span class="pill">第 1 页 · 16:33</span>
+      <div class="mini-chat">
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">你喜欢我吗？</div>
+        </div>
+        <p class="why">批注：典型的废物测试｜拉扯：潜意思（你对我好，我就喜欢）又展示自己的框架价值</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">对我好的，每个人我都喜欢呀</div>
+        </div>
+        <p class="why">批注：又是一个废物测试——抛出问题，判断价值</p>
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">那我对你好？还是前女友对你好？</div>
+        </div>
+        <p class="why">批注：拉扯，偷换概念，准备出击</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">昨天和明天，怎么能对比呢</div>
+        </div>
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">什么意思？</div>
+        </div>
+        <p class="why">批注：好奇，拉近关系｜16:38</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="pill">第 2 页</span>
+      <div class="mini-chat">
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">什么意思？</div>
+        </div>
+        <p class="why">批注：拉扯，抬高女生的身份</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">昨天是过去，明天是希望。你觉得呢？</div>
+        </div>
+        <p class="why">16:39 批注：提供情绪价值，引导女生进入我们的框架</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">你觉得过去重要，还是希望更重要呢？</div>
+        </div>
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">那肯定是希望啊</div>
+        </div>
+        <p class="why">批注：成功进入框架，态度升温</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">不对</div>
+        </div>
+        <p class="why">批注：拉扯，制造落差</p>
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">嗯？</div>
+        </div>
+        <p class="why">批注：再一次好奇，吊胃口</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <span class="pill">第 3 页</span>
+      <div class="mini-chat">
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">嗯？</div>
+        </div>
+        <p class="why">批注：拉扯，制造悬念，肯定价值</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">不是希望重要，而是有希望更重要</div>
+        </div>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">对吧？希望小姐🥰</div>
+        </div>
+        <p class="why">批注：框架，让女生代入</p>
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">你这么会说，那一定有很多女孩子喜欢你吧</div>
+        </div>
+        <p class="why">批注：废物测试</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">她们喜不喜欢我，我不知道</div>
+        </div>
+        <p class="why">批注：拉扯，表明态度，又不否认自己优秀</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">但是我知道，我喜欢谁呀</div>
+        </div>
+        <p class="why">批注：表明自己立场，吸引好奇</p>
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">那你喜欢谁</div>
+        </div>
+        <p class="why">批注：成功勾起好奇，代入框架</p>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">口有点干了，你请我喝杯奶茶，我亲口告诉你</div>
+        </div>
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">可以，下班见</div>
+        </div>
+        <p class="why">批注：套入问题，服从性测试｜试探结束，推进成功</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p class="callout-title">光哥点评</p>
+      <p>“像上面这种，女生她也是那种气质女神，而且情商也很高，套路非常多，兄弟们一旦一句没回复好，那基本就凉凉了。”</p>
+    </div>
+  </section>
+
+  <section class="section" id="pushpull">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">04</span>推拉</div>
+      <h2>推拉技巧</h2>
+      <p class="lead">本节课第 4 点。老师改为“文字＋案例”形式讲解。</p>
+    </div>
+
+    <div class="callout quote">
+      <p>“推拉技巧”通常被用于社交互动、沟通技巧或心理学领域，尤其常见于男女情感关系或人际吸引力的讨论中。它是一种通过交替释放“积极兴趣”和“消极疏离”来制造张力、激发对方情绪波动和关注度的方法。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <span class="pill">推</span>
+        <p>轻微的后退、调侃、否定或保持距离，制造不确定性。</p>
+      </div>
+      <div class="card">
+        <span class="pill">拉</span>
+        <p>表达兴趣、赞美、亲近或肯定，传递好感。</p>
+      </div>
+    </div>
+
+    <div class="card soft">
+      <span class="pill">用处</span>
+      <p>通过一推一拉的动态平衡，避免你和女生关系陷入平淡或过度迎合，从而维持吸引力和探索欲。</p>
+    </div>
+
+    <h3>三种常见示例</h3>
+    <ul class="clean">
+      <li><b>1. 调侃式推拉</b><br>拉：“你今天穿得很有品味。”　推：（原图下半部分被聊天输入框遮挡）</li>
+      <li><b>2. 态度推拉</b><br>拉：主动邀约或热情回应。<br>推：适度减少联系频率，保持自我节奏。</li>
+      <li><b>3. 言语推拉</b><br>推：“你有时候挺气人的。”<br>拉：“但偏偏这种真实让人想靠近。”</li>
+    </ul>
+
+    <h3>应用场景与注意事项</h3>
+    <div class="grid-2">
+      <div class="card">
+        <span class="pill">适用</span>
+        <p>初期吸引阶段、暧昧期、或长期关系中制造新鲜感。</p>
+      </div>
+      <div class="card warm">
+        <span class="pill">禁忌</span>
+        <ul class="clean">
+          <li>避免过度“推”，显得刻薄或伤害自尊。</li>
+          <li>避免机械式交替，显得不真诚。</li>
+          <li>关系稳固后应以真诚沟通为主。</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>初级拉扯与顶级拉扯</h3>
+    <p>拉扯也分为初级拉扯和顶级拉扯。我们常见的就是初级拉扯；顶级拉扯针对于那些高情商的顶美才会用到。</p>
+    <p>初级拉扯在实战中怎么运用？首先要从女生的话题内容去突破。</p>
+    <div class="callout quote">
+      <p>“一推一拉，推完一定要接着拉。不能只推不拉，也不能只拉不推。让女生觉得跟你聊天非常刺激好玩，就像坐过山车一样心跳加快，她的大脑会大量分泌多巴胺，产生心动的感觉。”</p>
+      <p>“那什么是顶级推拉？顶级推拉需要高情商、丰富的恋爱经验和认知。”</p>
+    </div>
+  </section>
+
+  <section class="section" id="coldread">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">05</span>冷读</div>
+      <h2>冷读技巧</h2>
+      <p class="lead">本节课第 5 点，被老师称为“可以强行破冰”的经典术语。</p>
+    </div>
+
+    <div class="callout quote">
+      <p>“冷读一直以来在恋爱领域有着一席之地，主要用在和刚认识不久的女生交流时，达到快速破冰、走进女生内心的用途。就是一种使女生相信‘这个人知道我的事’的技巧，也可说是一种赢得他人信任的手法。”</p>
+      <p>“首先所谓的‘冷读’说白了就是‘讲反话’，即把黑的说成白的，白的说成花的。”</p>
+    </div>
+
+    <h3>拆解公式</h3>
+    <div class="card">
+      <p><b>个人需求拆解 ＋ 价值观认同 ＋ 导向暗示</b></p>
+      <p class="why">说得简单点：就是把好的东西往坏了去说，把坏的东西往好了说，然后表现出来你对她的认可，让女生觉得你跟别人不一样。</p>
+    </div>
+
+    <h3>万能心理学公式</h3>
+    <div class="card warm">
+      <p><b>虽然你的外在表现是 A，但我感知到你的内在是 B。</b></p>
+    </div>
+
+    <h3>案例一：事业心重、看起来高冷的女生</h3>
+    <div class="card">
+      <span class="pill">聊天原图</span>
+      <div class="mini-chat">
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">很多人都觉得我高冷，不好靠近</div>
+        </div>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">别人说你独立好强，其实只是因为你有他们没有的毅力和上进心</div>
+        </div>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">但是你是一个女孩子呀，你也需要一个依靠</div>
+        </div>
+        <div class="mini-row me">
+          <div class="mini-avatar">我</div>
+          <div class="mini-bubble">只是你对那个人的要求比较高，可这也正好说明，你不是一个随意且将就的女人</div>
+        </div>
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">没想到你还蛮懂的</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>案例二：很漂亮的女生</h3>
+    <p>“再比如，你遇到一个漂亮的女生，除了漂亮她一文不值，那你就可以这么说。”</p>
+    <div class="card">
+      <span class="pill">聊天原图</span>
+      <div class="mini-chat">
+        <div class="mini-row">
+          <div class="mini-avatar">她</div>
+          <div class="mini-bubble">我觉得长得好看又不能当饭吃，我觉得我有时候很笨</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>为什么冷读能强行破冰</h3>
+    <div class="callout quote">
+      <p>“原因很简单，因为每个人都爱做梦：不是把自己往高尚了去幻想，就是把自己往悲惨了去营造。这不是毛病，这是人性。”</p>
+    </div>
+
+    <h3>冷读靠的不是话术，是观察力</h3>
+    <p>冷读不是靠话术，是靠你的情商、你的观察力，是你能看到别人看不到的细节：</p>
+    <ol class="clean">
+      <li><b>她朋友圈内容</b>（旅行、美食、自拍、工作、学习）</li>
+      <li><b>她头像风格</b>（可爱、性感、文艺、简约）</li>
+      <li><b>她的说话语气</b>（活泼、冷静、略带防备）</li>
+      <li><b>她回复速度</b>（秒回、轮回、时快时慢）</li>
+    </ol>
+    <p class="small muted">这些细节都在告诉你：她是什么样的人？她需要什么样的人。</p>
+
+    <h3>不同关系阶段怎么用</h3>
+    <div class="card">
+      <span class="pill">陌生阶段</span>
+      <p>快速建立“你懂我”的感觉。</p>
+      <p class="why">示例句式：“……起来挺开朗的，但内心其实挺慢热，不会轻易对人敞开心扉。”</p>
+    </div>
+  </section>
+
+  <section class="section" id="case">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">06</span>实战案例</div>
+      <h2>弟子两小时聊成暧昧女朋友</h2>
+    </div>
+    <div class="callout quote">
+      <p>“最后分享一下实战案例。光哥的一个弟子，在社交软件上，从开场到加微信到聊成暧昧女朋友的全过程，兄弟们可以看一下，简单高效，两个小时搞定。”</p>
+      <p>“为什么人家获取资源这么快，聊成暧昧这么快，引导女生付出这么快？”</p>
+    </div>
+    <p class="small muted">该段为多张长截图（弟子「聊风」与女生的完整聊天记录），按原图顺序排列，本节课未逐字转录。</p>
+
+    <h3>课间补充原话</h3>
+    <div class="card">
+      <p>“很多兄弟都觉得聊天要能给女生情绪价值，觉得聊天就是幽默风趣就行了，但是这种思维就是错的。我们要通过女生回复的话，去解读其背后的潜台词是什么，这个叫社交直觉，也就是你们的情商认知，然后去展示相对应价值去吸引她。”</p>
+      <p>“不是去乱聊装幽默风趣。都是有原理、有步骤的，不要为了幽默而幽默，很屌丝。你装幽默，女生很容易就能察觉出来。”</p>
+    </div>
+  </section>
+
+  <section class="section" id="checklist">
+    <div class="section-head">
+      <div class="section-kicker"><span class="num">07</span>速览</div>
+      <h2>一页要点</h2>
+    </div>
+    <div class="card">
+      <ul class="clean">
+        <li><b>八大败好感行为</b>：① 太饥渴（信息轰炸、查户口）② 太快邀约 ③ 油腔滑调（4–8 本节未展开）</li>
+        <li><b>饥渴的本质</b>：行为传递匮乏；越难得到越想要，送上门的反而拒绝</li>
+        <li><b>太快的本质</b>：暴露目的性 → 女生下意识拒绝与防备</li>
+        <li><b>底层认知</b>：女生用情绪思考；逻辑层对不过情绪层；情绪层只对“情绪波动”反应</li>
+        <li><b>两种男人</b>：贝塔男用“好”说服（像用钞票贿赂机器）；阿尔法男打入情绪系统</li>
+        <li><b>心动机制</b>：不可预测 → 好奇 → 情绪失控 → 误判为心动 → 上瘾 → 自我合理化</li>
+        <li><b>锁定关系</b>：相互投入 → 沉没成本 → 越投入越离不开</li>
+        <li><b>推</b>＝后退／调侃／否定／保持距离；<b>拉</b>＝兴趣／赞美／亲近／肯定</li>
+        <li><b>推拉铁律</b>：推完必须拉；只推不拉、只拉不推都不行</li>
+        <li><b>冷读</b>＝讲反话；公式：个人需求拆解＋价值观认同＋导向暗示</li>
+        <li><b>冷读万能句</b>：虽然你外在是 A，但我感知到你内在是 B</li>
+        <li><b>冷读素材</b>：朋友圈、头像风格、说话语气、回复速度</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer style="max-width:1120px;margin:0 auto;padding:28px 20px 64px;color:#6b7280;font-size:13px;text-align:center;border-top:1px solid #e5e8e6">
+  <p>788期魅力男神魔力聊天训练营 · 第二节课 · 2026-10-28</p>
+  <p class="small muted">完整逐条记录（含语音转写全文）另存为 10.28课堂完整记录.md</p>
+</footer>
+
+<script>
+(function(){
+  var bar = document.getElementById('progressBar');
+  var main = document.getElementById('main');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    if (bar) bar.style.width = p + '%';
+  }
+  document.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+  var links = document.querySelectorAll('.toc a[href^="#"]');
+  var secs = [];
+  links.forEach(function(a){
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) secs.push({a:a, el:el});
+  });
+  if ('IntersectionObserver' in window && secs.length){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        secs.forEach(function(s){ s.a.classList.toggle('active', s.el === e.target); });
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    secs.forEach(function(s){ io.observe(s.el); });
+  }
+})();
+</script>
+</body>
+</html>
